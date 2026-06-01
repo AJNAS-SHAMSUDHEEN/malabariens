@@ -1,0 +1,168 @@
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,800;0,900;1,800&family=Inter:wght@300;400;500;600;700;800;900&display=swap");
+
+/* Responsive utility: removes mobile sticky-bar padding on desktop */
+@media (min-width: 768px) {
+  main { padding-bottom: 0 !important; }
+}
+
+/* ===================================================
+   MALABARIANS — Global Tokens & Reset
+   =================================================== */
+:root {
+  /* Brand Palette */
+  --clr-green-950: #0b1f07;
+  --clr-green-900: #122508;
+  --clr-green-800: #1b3a0e;
+  --clr-green-700: #1e4d0f;
+  --clr-green-600: #256113;
+  --clr-green-500: #2d7a18;
+  --clr-green-400: #3d9e25;
+  --clr-green-100: #d4edca;
+  --clr-green-50:  #edf7e8;
+
+  --clr-gold-700:  #a85f06;
+  --clr-gold-600:  #c47208;
+  --clr-gold-500:  #e08c0a;
+  --clr-gold-400:  #f5a623;
+  --clr-gold-300:  #fbbf24;
+  --clr-gold-100:  #fef3c7;
+  --clr-gold-50:   #fffbeb;
+
+  --clr-brown-800: #2c1503;
+  --clr-brown-700: #3d1c02;
+  --clr-brown-500: #6b3a15;
+  --clr-brown-300: #a8714a;
+  --clr-brown-100: #f0dfd3;
+
+  --clr-white:     #ffffff;
+  --clr-off-white: #fafaf8;
+  --clr-gray-50:   #f9fafb;
+  --clr-gray-100:  #f3f4f6;
+  --clr-gray-200:  #e5e7eb;
+  --clr-gray-300:  #d1d5db;
+  --clr-gray-500:  #6b7280;
+  --clr-gray-700:  #374151;
+  --clr-gray-900:  #111827;
+
+  /* Spacing Scale (8px base) */
+  --sp-1: 4px;   --sp-2: 8px;   --sp-3: 12px;  --sp-4: 16px;
+  --sp-5: 20px;  --sp-6: 24px;  --sp-8: 32px;  --sp-10: 40px;
+  --sp-12: 48px; --sp-16: 64px; --sp-20: 80px; --sp-24: 96px;
+  --sp-32: 128px;
+
+  /* Typography */
+  --ff-display: 'Playfair Display', Georgia, serif;
+  --ff-body:    'Inter', system-ui, -apple-system, sans-serif;
+
+  --fs-xs:   11px;  --lh-xs: 1.5;
+  --fs-sm:   13px;  --lh-sm: 1.6;
+  --fs-base: 15px;  --lh-base: 1.7;
+  --fs-lg:   17px;  --lh-lg: 1.6;
+  --fs-xl:   20px;
+  --fs-2xl:  24px;
+  --fs-3xl:  30px;
+  --fs-4xl:  36px;
+  --fs-5xl:  48px;
+  --fs-6xl:  60px;
+  --fs-7xl:  72px;
+
+  /* Radii */
+  --r-sm:   6px;   --r-md:  12px;  --r-lg:  18px;
+  --r-xl:   24px;  --r-2xl: 32px;  --r-full: 9999px;
+
+  /* Shadows */
+  --shadow-xs:  0 1px 3px rgba(0,0,0,0.06), 0 1px 2px rgba(0,0,0,0.04);
+  --shadow-sm:  0 2px 8px rgba(0,0,0,0.08), 0 1px 4px rgba(0,0,0,0.04);
+  --shadow-md:  0 8px 24px rgba(0,0,0,0.10), 0 2px 8px rgba(0,0,0,0.06);
+  --shadow-lg:  0 20px 48px rgba(0,0,0,0.12), 0 4px 16px rgba(0,0,0,0.06);
+  --shadow-xl:  0 32px 64px rgba(0,0,0,0.16), 0 8px 24px rgba(0,0,0,0.08);
+  --shadow-green-sm: 0 4px 16px rgba(29,77,15,0.25);
+  --shadow-green-md: 0 8px 32px rgba(29,77,15,0.30);
+  --shadow-green-lg: 0 16px 48px rgba(29,77,15,0.35);
+  --shadow-gold-md:  0 8px 32px rgba(245,166,35,0.35);
+
+  /* Transitions */
+  --ease-out:  cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-in:   cubic-bezier(0.4, 0, 1, 1);
+  --dur-fast:  150ms;
+  --dur-base:  250ms;
+  --dur-slow:  400ms;
+
+  /* Layout */
+  --container: 1200px;
+  --container-wide: 1400px;
+}
+
+/* ===================================================
+   Reset
+   =================================================== */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; font-size: 16px; -webkit-text-size-adjust: 100%; }
+body {
+  font-family: var(--ff-body);
+  font-size: var(--fs-base);
+  line-height: var(--lh-base);
+  color: var(--clr-gray-900);
+  background: var(--clr-off-white);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
+img, video { display: block; max-width: 100%; }
+a { color: inherit; text-decoration: none; }
+button { cursor: pointer; border: none; background: none; font-family: inherit; }
+input, textarea, select { font-family: inherit; font-size: inherit; }
+
+/* ===================================================
+   Scrollbar
+   =================================================== */
+::-webkit-scrollbar { width: 5px; }
+::-webkit-scrollbar-track { background: var(--clr-gold-50); }
+::-webkit-scrollbar-thumb { background: var(--clr-green-700); border-radius: 4px; }
+::-webkit-scrollbar-thumb:hover { background: var(--clr-green-500); }
+
+/* ===================================================
+   Utility – Container
+   =================================================== */
+.container {
+  width: 100%;
+  max-width: var(--container);
+  margin-inline: auto;
+  padding-inline: var(--sp-5);
+}
+@media (min-width: 640px)  { .container { padding-inline: var(--sp-8); } }
+@media (min-width: 1024px) { .container { padding-inline: var(--sp-10); } }
+
+/* ===================================================
+   Utility – Typography
+   =================================================== */
+.display { font-family: var(--ff-display); }
+.sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0,0,0,0); }
+
+/* ===================================================
+   Keyframes
+   =================================================== */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(24px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50%       { transform: translateY(-12px); }
+}
+@keyframes spinSlow {
+  to { transform: rotate(360deg); }
+}
+@keyframes pulseRing {
+  0%   { box-shadow: 0 0 0 0px rgba(37, 211, 102, 0.50); }
+  70%  { box-shadow: 0 0 0 16px rgba(37, 211, 102, 0); }
+  100% { box-shadow: 0 0 0 0px rgba(37, 211, 102, 0); }
+}
+@keyframes shimmer {
+  0%   { background-position: -200% center; }
+  100% { background-position:  200% center; }
+}
