@@ -20,7 +20,6 @@ export const metadata: Metadata = {
     locale: "en_IN",
     siteName: "MALABARIANS",
   },
-  themeColor: "#f5a623",
   manifest: "/manifest.json",
 };
 

@@ -51,14 +51,15 @@
   line-height: 1.6;
 }
 
-/* Grid */
-.grid {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: var(--sp-5);
+/* Arrow buttons — light section */
+.arrow {
+  background: var(--clr-white);
+  box-shadow: var(--shadow-md);
+  color: var(--clr-green-800);
 }
-@media (min-width: 640px)  { .grid { grid-template-columns: repeat(2, 1fr); } }
-@media (min-width: 1024px) { .grid { grid-template-columns: repeat(3, 1fr); } }
+.arrow:hover {
+  background: var(--clr-green-50);
+}
 
 .card {
   background: var(--clr-white);

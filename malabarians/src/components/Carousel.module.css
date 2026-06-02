@@ -1,0 +1,75 @@
+/* ── Shared Carousel Shell ── */
+
+/* Outer wrapper — clips overflow */
+.carouselWrap {
+  position: relative;
+}
+
+/* Scrollable track */
+.track {
+  display: flex;
+  gap: var(--sp-5);
+  transition: transform 0.55s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  will-change: transform;
+  /* Prevent native scroll; we drive it via transform */
+  overflow: visible;
+}
+
+/* Every slide — fixed width controlled by JS via --slide-w CSS var */
+.slide {
+  flex: 0 0 var(--slide-w, 100%);
+  min-width: 0;
+}
+
+/* ── Dots ── */
+.dotsRow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  margin-top: var(--sp-8);
+}
+
+.dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--dot-idle, rgba(0,0,0,0.18));
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  transition: background 0.25s, transform 0.25s, width 0.25s;
+  flex-shrink: 0;
+}
+.dot.active {
+  background: var(--dot-active, var(--clr-gold-500));
+  width: 22px;
+  border-radius: 4px;
+}
+
+/* ── Arrow buttons ── */
+.arrowBtn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 10;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.2s, transform 0.2s, box-shadow 0.2s;
+}
+.arrowBtn:hover {
+  transform: translateY(-50%) scale(1.08);
+}
+.arrowBtn.left  { left:  -20px; }
+.arrowBtn.right { right: -20px; }
+
+/* On small screens hide arrows (finger-swipe not needed but avoids overflow) */
+@media (max-width: 639px) {
+  .arrowBtn { display: none; }
+}
