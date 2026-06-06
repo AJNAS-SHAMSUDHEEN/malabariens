@@ -1,92 +1,90 @@
 import Image from "next/image";
 import s from "./AboutSection.module.css";
 
+const BULLETS = [
+  "Made with Avil (Poha), Banana Powder, Milk Powder, Nuts, Raisins & Cardamom",
+  "Goodness in every sip",
+  "Perfect for breakfast, travel, or anytime hunger",
+  "No cooking required",
+];
+
 const STEPS = [
-  { n: "01", title: "Open the Pack", desc: "Pour all contents into a glass or cup." },
-  { n: "02", title: "Add 60ml Water", desc: "Cold or room-temperature water works perfectly." },
-  { n: "03", title: "Stir or Shake", desc: "Mix well for 10–15 seconds until smooth." },
-  { n: "04", title: "Enjoy! 🎉", desc: "Your authentic Kerala Avil Milk is ready." },
+  {
+    icon: (
+      <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"/>
+      </svg>
+    ),
+    text: "Add 5-6 tbsp (approx. 30g) of Avil Milk Mix",
+  },
+  {
+    icon: (
+      <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 3v1m0 16v1m8.66-13l-.87.5M4.21 17.5l-.87.5M20.66 17.5l-.87-.5M4.21 6.5l-.87-.5M21 12h-1M4 12H3"/>
+      </svg>
+    ),
+    text: "Add 60 ml water",
+  },
+  {
+    icon: (
+      <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"/>
+      </svg>
+    ),
+    text: "Shake / Stir well and enjoy!",
+  },
 ];
 
 export default function AboutSection() {
   return (
     <section id="about" className={s.section}>
       <div className="container">
-        <div className={s.grid}>
+        {/* Section Header */}
+        <div className={s.header}>
+          <p className={s.eyebrow}>— OUR PRODUCT —</p>
+          <h2 className={s.h2}>Malabarians Instant Avil Milk Mix</h2>
+        </div>
 
-          {/* ── Visual ── */}
-          <div className={s.visual}>
-            <div className={s.mainImageWrap}>
+        {/* 3-column layout */}
+        <div className={s.layout}>
+          {/* Left: Bullet points */}
+          <div className={s.left}>
+            <ul className={s.bullets}>
+              {BULLETS.map(b => (
+                <li key={b} className={s.bullet}>
+                  <span className={s.bulletCheck}>
+                    <svg width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M5 13l4 4L19 7"/>
+                    </svg>
+                  </span>
+                  <span>{b}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Center: Product images */}
+          <div className={s.center}>
+            <div className={s.imageWrap}>
               <Image
-                src="/product-glass.png"
-                alt="Malabarians Avil Milk served in a glass — authentic Kerala recipe"
-                width={640}
-                height={480}
-                className="object-cover"
-                style={{ width: "100%", height: "100%", objectFit: "cover" }}
+                src="/product-flatlay.png"
+                alt="Malabarians Instant Avil Milk Mix product display"
+                width={480}
+                height={420}
+                className={s.centerImg}
               />
-              <div className={s.imageOverlay} />
-              <div className={s.imageCaption}>
-                <span className={s.imageCaptionLabel}>Malabarians</span>
-                <p className={s.imageCaptionTitle}>
-                  Authentic Kerala<br />Avil Milk Experience
-                </p>
-              </div>
-            </div>
-
-            <div className={s.chipTop}>
-              <div className={s.chipIcon} style={{ background: "var(--clr-green-50)" }}>⚡</div>
-              <div>
-                <span className={s.chipVal}>30s</span>
-                <span className={s.chipLbl}>Ready Time</span>
-              </div>
-            </div>
-
-            <div className={s.chipBot}>
-              <div className={s.chipIcon} style={{ background: "var(--clr-gold-50)" }}>🌿</div>
-              <div>
-                <span className={s.chipVal} style={{ fontSize: "16px" }}>100%</span>
-                <span className={s.chipLbl}>Natural Ingredients</span>
-              </div>
             </div>
           </div>
 
-          {/* ── Content ── */}
-          <div className={s.content}>
-            <p className={s.pill}>About the Product</p>
-            <h2 className={s.h2}>
-              The Authentic Kerala<br />
-              <span>Avil Milk</span>
-            </h2>
-            <div className={s.divider} />
-
-            <p className={s.body}>
-              MALABARIANS Instant Avil Milk Mix brings the beloved Kerala Avil Milk experience into 
-              a convenient ready-to-mix format. Made with premium flattened rice, banana essence, and 
-              aromatic cardamom — every sip takes you back to the warmth of God&apos;s Own Country.
-            </p>
-            <p className={`${s.body} ${s.bodyLast}`}>
-              Whether at home, in the office, or on the road — enjoy your favourite traditional drink 
-              in under 30 seconds with zero compromise on taste or quality.
-            </p>
-
-            <div className={s.stepsCard}>
-              <div className={s.stepsHead}>
-                <div className={s.stepsHeadIcon}>
-                  <svg width="16" height="16" fill="none" stroke="white" viewBox="0 0 24 24" aria-hidden="true">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"/>
-                  </svg>
-                </div>
-                <span className={s.stepsHeadTitle}>How to Prepare</span>
-              </div>
-              <div className={s.stepsBody}>
-                {STEPS.map(st => (
-                  <div key={st.n} className={s.step}>
-                    <div className={s.stepNum}>{st.n}</div>
-                    <div className={s.stepText}>
-                      <p className={s.stepTitle}>{st.title}</p>
-                      <p className={s.stepDesc}>{st.desc}</p>
-                    </div>
+          {/* Right: How to prepare */}
+          <div className={s.right}>
+            <div className={s.prepCard}>
+              <h3 className={s.prepTitle}>HOW TO PREPARE</h3>
+              <div className={s.prepSteps}>
+                {STEPS.map((step, i) => (
+                  <div key={i} className={s.prepStep}>
+                    <div className={s.prepIcon}>{step.icon}</div>
+                    <p className={s.prepText}>{step.text}</p>
                   </div>
                 ))}
               </div>
