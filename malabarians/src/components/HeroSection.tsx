@@ -1,3 +1,5 @@
+"use client";
+
 import Image from "next/image";
 import s from "./HeroSection.module.css";
 
@@ -38,10 +40,15 @@ export default function HeroSection() {
 
         {/* ── Left: Text Content ── */}
         <div className={s.content}>
+          <div className={s.tagline}>
+            <span className={s.taglineDot} />
+            Authentic Kerala Flavour
+          </div>
+
           <h1 className={s.headline}>
-            Premium.<br />
-            Rich.<br />
-            Authentic Taste.
+            <span className={s.word}>Premium.</span>
+            <span className={s.word}>Rich.</span>
+            <span className={s.word}>Authentic Taste.</span>
           </h1>
 
           <p className={s.subtext}>
@@ -50,8 +57,8 @@ export default function HeroSection() {
           </p>
 
           <div className={s.badges}>
-            {BADGES.map(b => (
-              <div key={b.label} className={s.badge}>
+            {BADGES.map((b, i) => (
+              <div key={b.label} className={s.badge} style={{ animationDelay: `${0.6 + i * 0.12}s` }}>
                 <div className={s.badgeCircle}>{b.icon}</div>
                 <span className={s.badgeLabel}>{b.label}</span>
               </div>
@@ -59,11 +66,12 @@ export default function HeroSection() {
           </div>
 
           <a id="hero-discover-btn" href="#product" className={s.btnDiscover}>
-            Discover Our Product
+            <span className={s.btnText}>Discover Our Product</span>
+            <span className={s.btnArrow}>→</span>
           </a>
         </div>
 
-        {/* ── Right: Product Image — full bleed to edge ── */}
+        {/* ── Right: Product Image — desktop only ── */}
         <div className={s.visual}>
           <Image
             src="/hero-bg.png"
@@ -73,10 +81,20 @@ export default function HeroSection() {
             quality={92}
             className={s.productImg}
           />
-          {/* Left-edge blend into cream */}
           <div className={s.blendEdge} aria-hidden="true" />
+          <div className={s.floatRing} aria-hidden="true" />
         </div>
 
+      </div>
+
+      {/* Scroll-down hint — mobile only */}
+      <div className={s.scrollHint}>
+        <span className={s.scrollHintText}>Scroll to explore</span>
+        <span className={s.scrollHintArrow}>
+          <svg width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7"/>
+          </svg>
+        </span>
       </div>
     </section>
   );
