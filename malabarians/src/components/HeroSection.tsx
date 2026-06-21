@@ -10,8 +10,9 @@ import s from "./HeroSection.module.css";
    ───────────────────────────────────────────────── */
 
 const TOTAL_FRAMES = 240;
+const BLOB_BASE_URL = "https://02lrin0yndqag3mg.public.blob.vercel-storage.com/herosequences/";
 const FRAME_PATH = (n: number) =>
-  `/herosequences/ezgif-frame-${String(n).padStart(3, "0")}.png`;
+  `${BLOB_BASE_URL}ezgif-frame-${String(n).padStart(3, "0")}.png`;
 
 /* ─────────────────────────────────────────────────
    HERO SECTION — Preload-gated GSAP ScrollTrigger

@@ -1,0 +1,965 @@
+{
+  "baseUrl": "https://02lrin0yndqag3mg.public.blob.vercel-storage.com/herosequences/",
+  "frames": [
+    {
+      "filename": "ezgif-frame-001.png",
+      "url": "https://02lrin0yndqag3mg.public.blob.vercel-storage.com/herosequences/ezgif-frame-001.png"
+    },
+    {
+      "filename": "ezgif-frame-002.png",
+      "url": "https://02lrin0yndqag3mg.public.blob.vercel-storage.com/herosequences/ezgif-frame-002.png"
+    },
+    {
+      "filename": "ezgif-frame-003.png",
+      "url": "https://02lrin0yndqag3mg.public.blob.vercel-storage.com/herosequences/ezgif-frame-003.png"
+    },
+    {
+      "filename": "ezgif-frame-004.png",
+      "url": "https://02lrin0yndqag3mg.public.blob.vercel-storage.com/herosequences/ezgif-frame-004.png"
+    },
+    {
+      "filename": "ezgif-frame-005.png",
+      "url": "https://02lrin0yndqag3mg.public.blob.vercel-storage.com/herosequences/ezgif-frame-005.png"
+    },
+    {
+      "filename": "ezgif-frame-006.png",
+      "url": "https://02lrin0yndqag3mg.public.blob.vercel-storage.com/herosequences/ezgif-frame-006.png"
+    },
+    {
+      "filename": "ezgif-frame-007.png",
+      "url": "https://02lrin0yndqag3mg.public.blob.vercel-storage.com/herosequences/ezgif-frame-007.png"
+    },
+    {
+      "filename": "ezgif-frame-008.png",
+      "url": "https://02lrin0yndqag3mg.public.blob.vercel-storage.com/herosequences/ezgif-frame-008.png"
+    },
+    {
+      "filename": "ezgif-frame-009.png",
+      "url": "https://02lrin0yndqag3mg.public.blob.vercel-storage.com/herosequences/ezgif-frame-009.png"
+    },
+    {
+      "filename": "ezgif-frame-010.png",
+      "url": "https://02lrin0yndqag3mg.public.blob.vercel-storage.com/herosequences/ezgif-frame-010.png"
+    },
+    {
+      "filename": "ezgif-frame-011.png",
+      "url": "https://02lrin0yndqag3mg.public.blob.vercel-storage.com/herosequences/ezgif-frame-011.png"
+    },
+    {
+      "filename": "ezgif-frame-012.png",
+      "url": "https://02lrin0yndqag3mg.public.blob.vercel-storage.com/herosequences/ezgif-frame-012.png"
+    },
+    {
+      "filename": "ezgif-frame-013.png",
+      "url": "https://02lrin0yndqag3mg.public.blob.vercel-storage.com/herosequences/ezgif-frame-013.png"
+    },
+    {
+      "filename": "ezgif-frame-014.png",
+      "url": "https://02lrin0yndqag3mg.public.blob.vercel-storage.com/herosequences/ezgif-frame-014.png"
+    },
+    {
+      "filename": "ezgif-frame-015.png",
+      "url": "https://02lrin0yndqag3mg.public.blob.vercel-storage.com/herosequences/ezgif-frame-015.png"
+    },
+    {
+      "filename": "ezgif-frame-016.png",
+      "url": "https://02lrin0yndqag3mg.public.blob.vercel-storage.com/herosequences/ezgif-frame-016.png"
+    },
+    {
+      "filename": "ezgif-frame-017.png",
+      "url": "https://02lrin0yndqag3mg.public.blob.vercel-storage.com/herosequences/ezgif-frame-017.png"
+    },
+    {
+      "filename": "ezgif-frame-018.png",
+      "url": "https://02lrin0yndqag3mg.public.blob.vercel-storage.com/herosequences/ezgif-frame-018.png"
+    },
+    {
+      "filename": "ezgif-frame-019.png",
+      "url": "https://02lrin0yndqag3mg.public.blob.vercel-storage.com/herosequences/ezgif-frame-019.png"
+    },
+    {
+      "filename": "ezgif-frame-020.png",
+      "url": "https://02lrin0yndqag3mg.public.blob.vercel-storage.com/herosequences/ezgif-frame-020.png"
+    },
+    {
+      "filename": "ezgif-frame-021.png",
+      "url": "https://02lrin0yndqag3mg.public.blob.vercel-storage.com/herosequences/ezgif-frame-021.png"
+    },
+    {
+      "filename": "ezgif-frame-022.png",
+      "url": "https://02lrin0yndqag3mg.public.blob.vercel-storage.com/herosequences/ezgif-frame-022.png"
+    },
+    {
+      "filename": "ezgif-frame-023.png",
+      "url": "https://02lrin0yndqag3mg.public.blob.vercel-storage.com/herosequences/ezgif-frame-023.png"
+    },
+    {
+      "filename": "ezgif-frame-024.png",
+      "url": "https://02lrin0yndqag3mg.public.blob.vercel-storage.com/herosequences/ezgif-frame-024.png"
+    },
+    {
+      "filename": "ezgif-frame-025.png",
+      "url": "https://02lrin0yndqag3mg.public.blob.vercel-storage.com/herosequences/ezgif-frame-025.png"
+    },
+    {
+      "filename": "ezgif-frame-026.png",
+      "url": "https://02lrin0yndqag3mg.public.blob.vercel-storage.com/herosequences/ezgif-frame-026.png"
+    },
+    {
+      "filename": "ezgif-frame-027.png",
+      "url": "https://02lrin0yndqag3mg.public.blob.vercel-storage.com/herosequences/ezgif-frame-027.png"
+    },
+    {
+      "filename": "ezgif-frame-028.png",
+      "url": "https://02lrin0yndqag3mg.public.blob.vercel-storage.com/herosequences/ezgif-frame-028.png"
+    },
+    {
+      "filename": "ezgif-frame-029.png",
+      "url": "https://02lrin0yndqag3mg.public.blob.vercel-storage.com/herosequences/ezgif-frame-029.png"
+    },
+    {
+      "filename": "ezgif-frame-030.png",
+      "url": "https://02lrin0yndqag3mg.public.blob.vercel-storage.com/herosequences/ezgif-frame-030.png"
+    },
+    {
+      "filename": "ezgif-frame-031.png",
+      "url": "https://02lrin0yndqag3mg.public.blob.vercel-storage.com/herosequences/ezgif-frame-031.png"
+    },
+    {
+      "filename": "ezgif-frame-032.png",
+      "url": "https://02lrin0yndqag3mg.public.blob.vercel-storage.com/herosequences/ezgif-frame-032.png"
+    },
+    {
+      "filename": "ezgif-frame-033.png",
+      "url": "https://02lrin0yndqag3mg.public.blob.vercel-storage.com/herosequences/ezgif-frame-033.png"
+    },
+    {
+      "filename": "ezgif-frame-034.png",
+      "url": "https://02lrin0yndqag3mg.public.blob.vercel-storage.com/herosequences/ezgif-frame-034.png"
+    },
+    {
+      "filename": "ezgif-frame-035.png",
+      "url": "https://02lrin0yndqag3mg.public.blob.vercel-storage.com/herosequences/ezgif-frame-035.png"
+    },
+    {
+      "filename": "ezgif-frame-036.png",
+      "url": "https://02lrin0yndqag3mg.public.blob.vercel-storage.com/herosequences/ezgif-frame-036.png"
+    },
+    {
+      "filename": "ezgif-frame-037.png",
+      "url": "https://02lrin0yndqag3mg.public.blob.vercel-storage.com/herosequences/ezgif-frame-037.png"
+    },
+    {
+      "filename": "ezgif-frame-038.png",
+      "url": "https://02lrin0yndqag3mg.public.blob.vercel-storage.com/herosequences/ezgif-frame-038.png"
+    },
+    {
+      "filename": "ezgif-frame-039.png",
+      "url": "https://02lrin0yndqag3mg.public.blob.vercel-storage.com/herosequences/ezgif-frame-039.png"
+    },
+    {
+      "filename": "ezgif-frame-040.png",
+      "url": "https://02lrin0yndqag3mg.public.blob.vercel-storage.com/herosequences/ezgif-frame-040.png"
+    },
+    {
+      "filename": "ezgif-frame-041.png",
+      "url": "https://02lrin0yndqag3mg.public.blob.vercel-storage.com/herosequences/ezgif-frame-041.png"
+    },
+    {
+      "filename": "ezgif-frame-042.png",
+      "url": "https://02lrin0yndqag3mg.public.blob.vercel-storage.com/herosequences/ezgif-frame-042.png"
+    },
+    {
+      "filename": "ezgif-frame-043.png",
+      "url": "https://02lrin0yndqag3mg.public.blob.vercel-storage.com/herosequences/ezgif-frame-043.png"
+    },
+    {
+      "filename": "ezgif-frame-044.png",
+      "url": "https://02lrin0yndqag3mg.public.blob.vercel-storage.com/herosequences/ezgif-frame-044.png"
+    },
+    {
+      "filename": "ezgif-frame-045.png",
+      "url": "https://02lrin0yndqag3mg.public.blob.vercel-storage.com/herosequences/ezgif-frame-045.png"
+    },
+    {
+      "filename": "ezgif-frame-046.png",
+      "url": "https://02lrin0yndqag3mg.public.blob.vercel-storage.com/herosequences/ezgif-frame-046.png"
+    },
+    {
+      "filename": "ezgif-frame-047.png",
+      "url": "https://02lrin0yndqag3mg.public.blob.vercel-storage.com/herosequences/ezgif-frame-047.png"
+    },
+    {
+      "filename": "ezgif-frame-048.png",
+      "url": "https://02lrin0yndqag3mg.public.blob.vercel-storage.com/herosequences/ezgif-frame-048.png"
+    },
+    {
+      "filename": "ezgif-frame-049.png",
+      "url": "https://02lrin0yndqag3mg.public.blob.vercel-storage.com/herosequences/ezgif-frame-049.png"
+    },
+    {
+      "filename": "ezgif-frame-050.png",
+      "url": "https://02lrin0yndqag3mg.public.blob.vercel-storage.com/herosequences/ezgif-frame-050.png"
+    },
+    {
+      "filename": "ezgif-frame-051.png",
+      "url": "https://02lrin0yndqag3mg.public.blob.vercel-storage.com/herosequences/ezgif-frame-051.png"
+    },
+    {
+      "filename": "ezgif-frame-052.png",
+      "url": "https://02lrin0yndqag3mg.public.blob.vercel-storage.com/herosequences/ezgif-frame-052.png"
+    },
+    {
+      "filename": "ezgif-frame-053.png",
+      "url": "https://02lrin0yndqag3mg.public.blob.vercel-storage.com/herosequences/ezgif-frame-053.png"
+    },
+    {
+      "filename": "ezgif-frame-054.png",
+      "url": "https://02lrin0yndqag3mg.public.blob.vercel-storage.com/herosequences/ezgif-frame-054.png"
+    },
+    {
+      "filename": "ezgif-frame-055.png",
+      "url": "https://02lrin0yndqag3mg.public.blob.vercel-storage.com/herosequences/ezgif-frame-055.png"
+    },
+    {
+      "filename": "ezgif-frame-056.png",
+      "url": "https://02lrin0yndqag3mg.public.blob.vercel-storage.com/herosequences/ezgif-frame-056.png"
+    },
+    {
+      "filename": "ezgif-frame-057.png",
+      "url": "https://02lrin0yndqag3mg.public.blob.vercel-storage.com/herosequences/ezgif-frame-057.png"
+    },
+    {
+      "filename": "ezgif-frame-058.png",
+      "url": "https://02lrin0yndqag3mg.public.blob.vercel-storage.com/herosequences/ezgif-frame-058.png"
+    },
+    {
+      "filename": "ezgif-frame-059.png",
+      "url": "https://02lrin0yndqag3mg.public.blob.vercel-storage.com/herosequences/ezgif-frame-059.png"
+    },
+    {
+      "filename": "ezgif-frame-060.png",
+      "url": "https://02lrin0yndqag3mg.public.blob.vercel-storage.com/herosequences/ezgif-frame-060.png"
+    },
+    {
+      "filename": "ezgif-frame-061.png",
+      "url": "https://02lrin0yndqag3mg.public.blob.vercel-storage.com/herosequences/ezgif-frame-061.png"
+    },
+    {
+      "filename": "ezgif-frame-062.png",
+      "url": "https://02lrin0yndqag3mg.public.blob.vercel-storage.com/herosequences/ezgif-frame-062.png"
+    },
+    {
+      "filename": "ezgif-frame-063.png",
+      "url": "https://02lrin0yndqag3mg.public.blob.vercel-storage.com/herosequences/ezgif-frame-063.png"
+    },
+    {
+      "filename": "ezgif-frame-064.png",
+      "url": "https://02lrin0yndqag3mg.public.blob.vercel-storage.com/herosequences/ezgif-frame-064.png"
+    },
+    {
+      "filename": "ezgif-frame-065.png",
+      "url": "https://02lrin0yndqag3mg.public.blob.vercel-storage.com/herosequences/ezgif-frame-065.png"
+    },
+    {
+      "filename": "ezgif-frame-066.png",
+      "url": "https://02lrin0yndqag3mg.public.blob.vercel-storage.com/herosequences/ezgif-frame-066.png"
+    },
+    {
+      "filename": "ezgif-frame-067.png",
+      "url": "https://02lrin0yndqag3mg.public.blob.vercel-storage.com/herosequences/ezgif-frame-067.png"
+    },
+    {
+      "filename": "ezgif-frame-068.png",
+      "url": "https://02lrin0yndqag3mg.public.blob.vercel-storage.com/herosequences/ezgif-frame-068.png"
+    },
+    {
+      "filename": "ezgif-frame-069.png",
+      "url": "https://02lrin0yndqag3mg.public.blob.vercel-storage.com/herosequences/ezgif-frame-069.png"
+    },
+    {
+      "filename": "ezgif-frame-070.png",
+      "url": "https://02lrin0yndqag3mg.public.blob.vercel-storage.com/herosequences/ezgif-frame-070.png"
+    },
+    {
+      "filename": "ezgif-frame-071.png",
+      "url": "https://02lrin0yndqag3mg.public.blob.vercel-storage.com/herosequences/ezgif-frame-071.png"
+    },
+    {
+      "filename": "ezgif-frame-072.png",
+      "url": "https://02lrin0yndqag3mg.public.blob.vercel-storage.com/herosequences/ezgif-frame-072.png"
+    },
+    {
+      "filename": "ezgif-frame-073.png",
+      "url": "https://02lrin0yndqag3mg.public.blob.vercel-storage.com/herosequences/ezgif-frame-073.png"
+    },
+    {
+      "filename": "ezgif-frame-074.png",
+      "url": "https://02lrin0yndqag3mg.public.blob.vercel-storage.com/herosequences/ezgif-frame-074.png"
+    },
+    {
+      "filename": "ezgif-frame-075.png",
+      "url": "https://02lrin0yndqag3mg.public.blob.vercel-storage.com/herosequences/ezgif-frame-075.png"
+    },
+    {
+      "filename": "ezgif-frame-076.png",
+      "url": "https://02lrin0yndqag3mg.public.blob.vercel-storage.com/herosequences/ezgif-frame-076.png"
+    },
+    {
+      "filename": "ezgif-frame-077.png",
+      "url": "https://02lrin0yndqag3mg.public.blob.vercel-storage.com/herosequences/ezgif-frame-077.png"
+    },
+    {
+      "filename": "ezgif-frame-078.png",
+      "url": "https://02lrin0yndqag3mg.public.blob.vercel-storage.com/herosequences/ezgif-frame-078.png"
+    },
+    {
+      "filename": "ezgif-frame-079.png",
+      "url": "https://02lrin0yndqag3mg.public.blob.vercel-storage.com/herosequences/ezgif-frame-079.png"
+    },
+    {
+      "filename": "ezgif-frame-080.png",
+      "url": "https://02lrin0yndqag3mg.public.blob.vercel-storage.com/herosequences/ezgif-frame-080.png"
+    },
+    {
+      "filename": "ezgif-frame-081.png",
+      "url": "https://02lrin0yndqag3mg.public.blob.vercel-storage.com/herosequences/ezgif-frame-081.png"
+    },
+    {
+      "filename": "ezgif-frame-082.png",
+      "url": "https://02lrin0yndqag3mg.public.blob.vercel-storage.com/herosequences/ezgif-frame-082.png"
+    },
+    {
+      "filename": "ezgif-frame-083.png",
+      "url": "https://02lrin0yndqag3mg.public.blob.vercel-storage.com/herosequences/ezgif-frame-083.png"
+    },
+    {
+      "filename": "ezgif-frame-084.png",
+      "url": "https://02lrin0yndqag3mg.public.blob.vercel-storage.com/herosequences/ezgif-frame-084.png"
+    },
+    {
+      "filename": "ezgif-frame-085.png",
+      "url": "https://02lrin0yndqag3mg.public.blob.vercel-storage.com/herosequences/ezgif-frame-085.png"
+    },
+    {
+      "filename": "ezgif-frame-086.png",
+      "url": "https://02lrin0yndqag3mg.public.blob.vercel-storage.com/herosequences/ezgif-frame-086.png"
+    },
+    {
+      "filename": "ezgif-frame-087.png",
+      "url": "https://02lrin0yndqag3mg.public.blob.vercel-storage.com/herosequences/ezgif-frame-087.png"
+    },
+    {
+      "filename": "ezgif-frame-088.png",
+      "url": "https://02lrin0yndqag3mg.public.blob.vercel-storage.com/herosequences/ezgif-frame-088.png"
+    },
+    {
+      "filename": "ezgif-frame-089.png",
+      "url": "https://02lrin0yndqag3mg.public.blob.vercel-storage.com/herosequences/ezgif-frame-089.png"
+    },
+    {
+      "filename": "ezgif-frame-090.png",
+      "url": "https://02lrin0yndqag3mg.public.blob.vercel-storage.com/herosequences/ezgif-frame-090.png"
+    },
+    {
+      "filename": "ezgif-frame-091.png",
+      "url": "https://02lrin0yndqag3mg.public.blob.vercel-storage.com/herosequences/ezgif-frame-091.png"
+    },
+    {
+      "filename": "ezgif-frame-092.png",
+      "url": "https://02lrin0yndqag3mg.public.blob.vercel-storage.com/herosequences/ezgif-frame-092.png"
+    },
+    {
+      "filename": "ezgif-frame-093.png",
+      "url": "https://02lrin0yndqag3mg.public.blob.vercel-storage.com/herosequences/ezgif-frame-093.png"
+    },
+    {
+      "filename": "ezgif-frame-094.png",
+      "url": "https://02lrin0yndqag3mg.public.blob.vercel-storage.com/herosequences/ezgif-frame-094.png"
+    },
+    {
+      "filename": "ezgif-frame-095.png",
+      "url": "https://02lrin0yndqag3mg.public.blob.vercel-storage.com/herosequences/ezgif-frame-095.png"
+    },
+    {
+      "filename": "ezgif-frame-096.png",
+      "url": "https://02lrin0yndqag3mg.public.blob.vercel-storage.com/herosequences/ezgif-frame-096.png"
+    },
+    {
+      "filename": "ezgif-frame-097.png",
+      "url": "https://02lrin0yndqag3mg.public.blob.vercel-storage.com/herosequences/ezgif-frame-097.png"
+    },
+    {
+      "filename": "ezgif-frame-098.png",
+      "url": "https://02lrin0yndqag3mg.public.blob.vercel-storage.com/herosequences/ezgif-frame-098.png"
+    },
+    {
+      "filename": "ezgif-frame-099.png",
+      "url": "https://02lrin0yndqag3mg.public.blob.vercel-storage.com/herosequences/ezgif-frame-099.png"
+    },
+    {
+      "filename": "ezgif-frame-100.png",
+      "url": "https://02lrin0yndqag3mg.public.blob.vercel-storage.com/herosequences/ezgif-frame-100.png"
+    },
+    {
+      "filename": "ezgif-frame-101.png",
+      "url": "https://02lrin0yndqag3mg.public.blob.vercel-storage.com/herosequences/ezgif-frame-101.png"
+    },
+    {
+      "filename": "ezgif-frame-102.png",
+      "url": "https://02lrin0yndqag3mg.public.blob.vercel-storage.com/herosequences/ezgif-frame-102.png"
+    },
+    {
+      "filename": "ezgif-frame-103.png",
+      "url": "https://02lrin0yndqag3mg.public.blob.vercel-storage.com/herosequences/ezgif-frame-103.png"
+    },
+    {
+      "filename": "ezgif-frame-104.png",
+      "url": "https://02lrin0yndqag3mg.public.blob.vercel-storage.com/herosequences/ezgif-frame-104.png"
+    },
+    {
+      "filename": "ezgif-frame-105.png",
+      "url": "https://02lrin0yndqag3mg.public.blob.vercel-storage.com/herosequences/ezgif-frame-105.png"
+    },
+    {
+      "filename": "ezgif-frame-106.png",
+      "url": "https://02lrin0yndqag3mg.public.blob.vercel-storage.com/herosequences/ezgif-frame-106.png"
+    },
+    {
+      "filename": "ezgif-frame-107.png",
+      "url": "https://02lrin0yndqag3mg.public.blob.vercel-storage.com/herosequences/ezgif-frame-107.png"
+    },
+    {
+      "filename": "ezgif-frame-108.png",
+      "url": "https://02lrin0yndqag3mg.public.blob.vercel-storage.com/herosequences/ezgif-frame-108.png"
+    },
+    {
+      "filename": "ezgif-frame-109.png",
+      "url": "https://02lrin0yndqag3mg.public.blob.vercel-storage.com/herosequences/ezgif-frame-109.png"
+    },
+    {
+      "filename": "ezgif-frame-110.png",
+      "url": "https://02lrin0yndqag3mg.public.blob.vercel-storage.com/herosequences/ezgif-frame-110.png"
+    },
+    {
+      "filename": "ezgif-frame-111.png",
+      "url": "https://02lrin0yndqag3mg.public.blob.vercel-storage.com/herosequences/ezgif-frame-111.png"
+    },
+    {
+      "filename": "ezgif-frame-112.png",
+      "url": "https://02lrin0yndqag3mg.public.blob.vercel-storage.com/herosequences/ezgif-frame-112.png"
+    },
+    {
+      "filename": "ezgif-frame-113.png",
+      "url": "https://02lrin0yndqag3mg.public.blob.vercel-storage.com/herosequences/ezgif-frame-113.png"
+    },
+    {
+      "filename": "ezgif-frame-114.png",
+      "url": "https://02lrin0yndqag3mg.public.blob.vercel-storage.com/herosequences/ezgif-frame-114.png"
+    },
+    {
+      "filename": "ezgif-frame-115.png",
+      "url": "https://02lrin0yndqag3mg.public.blob.vercel-storage.com/herosequences/ezgif-frame-115.png"
+    },
+    {
+      "filename": "ezgif-frame-116.png",
+      "url": "https://02lrin0yndqag3mg.public.blob.vercel-storage.com/herosequences/ezgif-frame-116.png"
+    },
+    {
+      "filename": "ezgif-frame-117.png",
+      "url": "https://02lrin0yndqag3mg.public.blob.vercel-storage.com/herosequences/ezgif-frame-117.png"
+    },
+    {
+      "filename": "ezgif-frame-118.png",
+      "url": "https://02lrin0yndqag3mg.public.blob.vercel-storage.com/herosequences/ezgif-frame-118.png"
+    },
+    {
+      "filename": "ezgif-frame-119.png",
+      "url": "https://02lrin0yndqag3mg.public.blob.vercel-storage.com/herosequences/ezgif-frame-119.png"
+    },
+    {
+      "filename": "ezgif-frame-120.png",
+      "url": "https://02lrin0yndqag3mg.public.blob.vercel-storage.com/herosequences/ezgif-frame-120.png"
+    },
+    {
+      "filename": "ezgif-frame-121.png",
+      "url": "https://02lrin0yndqag3mg.public.blob.vercel-storage.com/herosequences/ezgif-frame-121.png"
+    },
+    {
+      "filename": "ezgif-frame-122.png",
+      "url": "https://02lrin0yndqag3mg.public.blob.vercel-storage.com/herosequences/ezgif-frame-122.png"
+    },
+    {
+      "filename": "ezgif-frame-123.png",
+      "url": "https://02lrin0yndqag3mg.public.blob.vercel-storage.com/herosequences/ezgif-frame-123.png"
+    },
+    {
+      "filename": "ezgif-frame-124.png",
+      "url": "https://02lrin0yndqag3mg.public.blob.vercel-storage.com/herosequences/ezgif-frame-124.png"
+    },
+    {
+      "filename": "ezgif-frame-125.png",
+      "url": "https://02lrin0yndqag3mg.public.blob.vercel-storage.com/herosequences/ezgif-frame-125.png"
+    },
+    {
+      "filename": "ezgif-frame-126.png",
+      "url": "https://02lrin0yndqag3mg.public.blob.vercel-storage.com/herosequences/ezgif-frame-126.png"
+    },
+    {
+      "filename": "ezgif-frame-127.png",
+      "url": "https://02lrin0yndqag3mg.public.blob.vercel-storage.com/herosequences/ezgif-frame-127.png"
+    },
+    {
+      "filename": "ezgif-frame-128.png",
+      "url": "https://02lrin0yndqag3mg.public.blob.vercel-storage.com/herosequences/ezgif-frame-128.png"
+    },
+    {
+      "filename": "ezgif-frame-129.png",
+      "url": "https://02lrin0yndqag3mg.public.blob.vercel-storage.com/herosequences/ezgif-frame-129.png"
+    },
+    {
+      "filename": "ezgif-frame-130.png",
+      "url": "https://02lrin0yndqag3mg.public.blob.vercel-storage.com/herosequences/ezgif-frame-130.png"
+    },
+    {
+      "filename": "ezgif-frame-131.png",
+      "url": "https://02lrin0yndqag3mg.public.blob.vercel-storage.com/herosequences/ezgif-frame-131.png"
+    },
+    {
+      "filename": "ezgif-frame-132.png",
+      "url": "https://02lrin0yndqag3mg.public.blob.vercel-storage.com/herosequences/ezgif-frame-132.png"
+    },
+    {
+      "filename": "ezgif-frame-133.png",
+      "url": "https://02lrin0yndqag3mg.public.blob.vercel-storage.com/herosequences/ezgif-frame-133.png"
+    },
+    {
+      "filename": "ezgif-frame-134.png",
+      "url": "https://02lrin0yndqag3mg.public.blob.vercel-storage.com/herosequences/ezgif-frame-134.png"
+    },
+    {
+      "filename": "ezgif-frame-135.png",
+      "url": "https://02lrin0yndqag3mg.public.blob.vercel-storage.com/herosequences/ezgif-frame-135.png"
+    },
+    {
+      "filename": "ezgif-frame-136.png",
+      "url": "https://02lrin0yndqag3mg.public.blob.vercel-storage.com/herosequences/ezgif-frame-136.png"
+    },
+    {
+      "filename": "ezgif-frame-137.png",
+      "url": "https://02lrin0yndqag3mg.public.blob.vercel-storage.com/herosequences/ezgif-frame-137.png"
+    },
+    {
+      "filename": "ezgif-frame-138.png",
+      "url": "https://02lrin0yndqag3mg.public.blob.vercel-storage.com/herosequences/ezgif-frame-138.png"
+    },
+    {
+      "filename": "ezgif-frame-139.png",
+      "url": "https://02lrin0yndqag3mg.public.blob.vercel-storage.com/herosequences/ezgif-frame-139.png"
+    },
+    {
+      "filename": "ezgif-frame-140.png",
+      "url": "https://02lrin0yndqag3mg.public.blob.vercel-storage.com/herosequences/ezgif-frame-140.png"
+    },
+    {
+      "filename": "ezgif-frame-141.png",
+      "url": "https://02lrin0yndqag3mg.public.blob.vercel-storage.com/herosequences/ezgif-frame-141.png"
+    },
+    {
+      "filename": "ezgif-frame-142.png",
+      "url": "https://02lrin0yndqag3mg.public.blob.vercel-storage.com/herosequences/ezgif-frame-142.png"
+    },
+    {
+      "filename": "ezgif-frame-143.png",
+      "url": "https://02lrin0yndqag3mg.public.blob.vercel-storage.com/herosequences/ezgif-frame-143.png"
+    },
+    {
+      "filename": "ezgif-frame-144.png",
+      "url": "https://02lrin0yndqag3mg.public.blob.vercel-storage.com/herosequences/ezgif-frame-144.png"
+    },
+    {
+      "filename": "ezgif-frame-145.png",
+      "url": "https://02lrin0yndqag3mg.public.blob.vercel-storage.com/herosequences/ezgif-frame-145.png"
+    },
+    {
+      "filename": "ezgif-frame-146.png",
+      "url": "https://02lrin0yndqag3mg.public.blob.vercel-storage.com/herosequences/ezgif-frame-146.png"
+    },
+    {
+      "filename": "ezgif-frame-147.png",
+      "url": "https://02lrin0yndqag3mg.public.blob.vercel-storage.com/herosequences/ezgif-frame-147.png"
+    },
+    {
+      "filename": "ezgif-frame-148.png",
+      "url": "https://02lrin0yndqag3mg.public.blob.vercel-storage.com/herosequences/ezgif-frame-148.png"
+    },
+    {
+      "filename": "ezgif-frame-149.png",
+      "url": "https://02lrin0yndqag3mg.public.blob.vercel-storage.com/herosequences/ezgif-frame-149.png"
+    },
+    {
+      "filename": "ezgif-frame-150.png",
+      "url": "https://02lrin0yndqag3mg.public.blob.vercel-storage.com/herosequences/ezgif-frame-150.png"
+    },
+    {
+      "filename": "ezgif-frame-151.png",
+      "url": "https://02lrin0yndqag3mg.public.blob.vercel-storage.com/herosequences/ezgif-frame-151.png"
+    },
+    {
+      "filename": "ezgif-frame-152.png",
+      "url": "https://02lrin0yndqag3mg.public.blob.vercel-storage.com/herosequences/ezgif-frame-152.png"
+    },
+    {
+      "filename": "ezgif-frame-153.png",
+      "url": "https://02lrin0yndqag3mg.public.blob.vercel-storage.com/herosequences/ezgif-frame-153.png"
+    },
+    {
+      "filename": "ezgif-frame-154.png",
+      "url": "https://02lrin0yndqag3mg.public.blob.vercel-storage.com/herosequences/ezgif-frame-154.png"
+    },
+    {
+      "filename": "ezgif-frame-155.png",
+      "url": "https://02lrin0yndqag3mg.public.blob.vercel-storage.com/herosequences/ezgif-frame-155.png"
+    },
+    {
+      "filename": "ezgif-frame-156.png",
+      "url": "https://02lrin0yndqag3mg.public.blob.vercel-storage.com/herosequences/ezgif-frame-156.png"
+    },
+    {
+      "filename": "ezgif-frame-157.png",
+      "url": "https://02lrin0yndqag3mg.public.blob.vercel-storage.com/herosequences/ezgif-frame-157.png"
+    },
+    {
+      "filename": "ezgif-frame-158.png",
+      "url": "https://02lrin0yndqag3mg.public.blob.vercel-storage.com/herosequences/ezgif-frame-158.png"
+    },
+    {
+      "filename": "ezgif-frame-159.png",
+      "url": "https://02lrin0yndqag3mg.public.blob.vercel-storage.com/herosequences/ezgif-frame-159.png"
+    },
+    {
+      "filename": "ezgif-frame-160.png",
+      "url": "https://02lrin0yndqag3mg.public.blob.vercel-storage.com/herosequences/ezgif-frame-160.png"
+    },
+    {
+      "filename": "ezgif-frame-161.png",
+      "url": "https://02lrin0yndqag3mg.public.blob.vercel-storage.com/herosequences/ezgif-frame-161.png"
+    },
+    {
+      "filename": "ezgif-frame-162.png",
+      "url": "https://02lrin0yndqag3mg.public.blob.vercel-storage.com/herosequences/ezgif-frame-162.png"
+    },
+    {
+      "filename": "ezgif-frame-163.png",
+      "url": "https://02lrin0yndqag3mg.public.blob.vercel-storage.com/herosequences/ezgif-frame-163.png"
+    },
+    {
+      "filename": "ezgif-frame-164.png",
+      "url": "https://02lrin0yndqag3mg.public.blob.vercel-storage.com/herosequences/ezgif-frame-164.png"
+    },
+    {
+      "filename": "ezgif-frame-165.png",
+      "url": "https://02lrin0yndqag3mg.public.blob.vercel-storage.com/herosequences/ezgif-frame-165.png"
+    },
+    {
+      "filename": "ezgif-frame-166.png",
+      "url": "https://02lrin0yndqag3mg.public.blob.vercel-storage.com/herosequences/ezgif-frame-166.png"
+    },
+    {
+      "filename": "ezgif-frame-167.png",
+      "url": "https://02lrin0yndqag3mg.public.blob.vercel-storage.com/herosequences/ezgif-frame-167.png"
+    },
+    {
+      "filename": "ezgif-frame-168.png",
+      "url": "https://02lrin0yndqag3mg.public.blob.vercel-storage.com/herosequences/ezgif-frame-168.png"
+    },
+    {
+      "filename": "ezgif-frame-169.png",
+      "url": "https://02lrin0yndqag3mg.public.blob.vercel-storage.com/herosequences/ezgif-frame-169.png"
+    },
+    {
+      "filename": "ezgif-frame-170.png",
+      "url": "https://02lrin0yndqag3mg.public.blob.vercel-storage.com/herosequences/ezgif-frame-170.png"
+    },
+    {
+      "filename": "ezgif-frame-171.png",
+      "url": "https://02lrin0yndqag3mg.public.blob.vercel-storage.com/herosequences/ezgif-frame-171.png"
+    },
+    {
+      "filename": "ezgif-frame-172.png",
+      "url": "https://02lrin0yndqag3mg.public.blob.vercel-storage.com/herosequences/ezgif-frame-172.png"
+    },
+    {
+      "filename": "ezgif-frame-173.png",
+      "url": "https://02lrin0yndqag3mg.public.blob.vercel-storage.com/herosequences/ezgif-frame-173.png"
+    },
+    {
+      "filename": "ezgif-frame-174.png",
+      "url": "https://02lrin0yndqag3mg.public.blob.vercel-storage.com/herosequences/ezgif-frame-174.png"
+    },
+    {
+      "filename": "ezgif-frame-175.png",
+      "url": "https://02lrin0yndqag3mg.public.blob.vercel-storage.com/herosequences/ezgif-frame-175.png"
+    },
+    {
+      "filename": "ezgif-frame-176.png",
+      "url": "https://02lrin0yndqag3mg.public.blob.vercel-storage.com/herosequences/ezgif-frame-176.png"
+    },
+    {
+      "filename": "ezgif-frame-177.png",
+      "url": "https://02lrin0yndqag3mg.public.blob.vercel-storage.com/herosequences/ezgif-frame-177.png"
+    },
+    {
+      "filename": "ezgif-frame-178.png",
+      "url": "https://02lrin0yndqag3mg.public.blob.vercel-storage.com/herosequences/ezgif-frame-178.png"
+    },
+    {
+      "filename": "ezgif-frame-179.png",
+      "url": "https://02lrin0yndqag3mg.public.blob.vercel-storage.com/herosequences/ezgif-frame-179.png"
+    },
+    {
+      "filename": "ezgif-frame-180.png",
+      "url": "https://02lrin0yndqag3mg.public.blob.vercel-storage.com/herosequences/ezgif-frame-180.png"
+    },
+    {
+      "filename": "ezgif-frame-181.png",
+      "url": "https://02lrin0yndqag3mg.public.blob.vercel-storage.com/herosequences/ezgif-frame-181.png"
+    },
+    {
+      "filename": "ezgif-frame-182.png",
+      "url": "https://02lrin0yndqag3mg.public.blob.vercel-storage.com/herosequences/ezgif-frame-182.png"
+    },
+    {
+      "filename": "ezgif-frame-183.png",
+      "url": "https://02lrin0yndqag3mg.public.blob.vercel-storage.com/herosequences/ezgif-frame-183.png"
+    },
+    {
+      "filename": "ezgif-frame-184.png",
+      "url": "https://02lrin0yndqag3mg.public.blob.vercel-storage.com/herosequences/ezgif-frame-184.png"
+    },
+    {
+      "filename": "ezgif-frame-185.png",
+      "url": "https://02lrin0yndqag3mg.public.blob.vercel-storage.com/herosequences/ezgif-frame-185.png"
+    },
+    {
+      "filename": "ezgif-frame-186.png",
+      "url": "https://02lrin0yndqag3mg.public.blob.vercel-storage.com/herosequences/ezgif-frame-186.png"
+    },
+    {
+      "filename": "ezgif-frame-187.png",
+      "url": "https://02lrin0yndqag3mg.public.blob.vercel-storage.com/herosequences/ezgif-frame-187.png"
+    },
+    {
+      "filename": "ezgif-frame-188.png",
+      "url": "https://02lrin0yndqag3mg.public.blob.vercel-storage.com/herosequences/ezgif-frame-188.png"
+    },
+    {
+      "filename": "ezgif-frame-189.png",
+      "url": "https://02lrin0yndqag3mg.public.blob.vercel-storage.com/herosequences/ezgif-frame-189.png"
+    },
+    {
+      "filename": "ezgif-frame-190.png",
+      "url": "https://02lrin0yndqag3mg.public.blob.vercel-storage.com/herosequences/ezgif-frame-190.png"
+    },
+    {
+      "filename": "ezgif-frame-191.png",
+      "url": "https://02lrin0yndqag3mg.public.blob.vercel-storage.com/herosequences/ezgif-frame-191.png"
+    },
+    {
+      "filename": "ezgif-frame-192.png",
+      "url": "https://02lrin0yndqag3mg.public.blob.vercel-storage.com/herosequences/ezgif-frame-192.png"
+    },
+    {
+      "filename": "ezgif-frame-193.png",
+      "url": "https://02lrin0yndqag3mg.public.blob.vercel-storage.com/herosequences/ezgif-frame-193.png"
+    },
+    {
+      "filename": "ezgif-frame-194.png",
+      "url": "https://02lrin0yndqag3mg.public.blob.vercel-storage.com/herosequences/ezgif-frame-194.png"
+    },
+    {
+      "filename": "ezgif-frame-195.png",
+      "url": "https://02lrin0yndqag3mg.public.blob.vercel-storage.com/herosequences/ezgif-frame-195.png"
+    },
+    {
+      "filename": "ezgif-frame-196.png",
+      "url": "https://02lrin0yndqag3mg.public.blob.vercel-storage.com/herosequences/ezgif-frame-196.png"
+    },
+    {
+      "filename": "ezgif-frame-197.png",
+      "url": "https://02lrin0yndqag3mg.public.blob.vercel-storage.com/herosequences/ezgif-frame-197.png"
+    },
+    {
+      "filename": "ezgif-frame-198.png",
+      "url": "https://02lrin0yndqag3mg.public.blob.vercel-storage.com/herosequences/ezgif-frame-198.png"
+    },
+    {
+      "filename": "ezgif-frame-199.png",
+      "url": "https://02lrin0yndqag3mg.public.blob.vercel-storage.com/herosequences/ezgif-frame-199.png"
+    },
+    {
+      "filename": "ezgif-frame-200.png",
+      "url": "https://02lrin0yndqag3mg.public.blob.vercel-storage.com/herosequences/ezgif-frame-200.png"
+    },
+    {
+      "filename": "ezgif-frame-201.png",
+      "url": "https://02lrin0yndqag3mg.public.blob.vercel-storage.com/herosequences/ezgif-frame-201.png"
+    },
+    {
+      "filename": "ezgif-frame-202.png",
+      "url": "https://02lrin0yndqag3mg.public.blob.vercel-storage.com/herosequences/ezgif-frame-202.png"
+    },
+    {
+      "filename": "ezgif-frame-203.png",
+      "url": "https://02lrin0yndqag3mg.public.blob.vercel-storage.com/herosequences/ezgif-frame-203.png"
+    },
+    {
+      "filename": "ezgif-frame-204.png",
+      "url": "https://02lrin0yndqag3mg.public.blob.vercel-storage.com/herosequences/ezgif-frame-204.png"
+    },
+    {
+      "filename": "ezgif-frame-205.png",
+      "url": "https://02lrin0yndqag3mg.public.blob.vercel-storage.com/herosequences/ezgif-frame-205.png"
+    },
+    {
+      "filename": "ezgif-frame-206.png",
+      "url": "https://02lrin0yndqag3mg.public.blob.vercel-storage.com/herosequences/ezgif-frame-206.png"
+    },
+    {
+      "filename": "ezgif-frame-207.png",
+      "url": "https://02lrin0yndqag3mg.public.blob.vercel-storage.com/herosequences/ezgif-frame-207.png"
+    },
+    {
+      "filename": "ezgif-frame-208.png",
+      "url": "https://02lrin0yndqag3mg.public.blob.vercel-storage.com/herosequences/ezgif-frame-208.png"
+    },
+    {
+      "filename": "ezgif-frame-209.png",
+      "url": "https://02lrin0yndqag3mg.public.blob.vercel-storage.com/herosequences/ezgif-frame-209.png"
+    },
+    {
+      "filename": "ezgif-frame-210.png",
+      "url": "https://02lrin0yndqag3mg.public.blob.vercel-storage.com/herosequences/ezgif-frame-210.png"
+    },
+    {
+      "filename": "ezgif-frame-211.png",
+      "url": "https://02lrin0yndqag3mg.public.blob.vercel-storage.com/herosequences/ezgif-frame-211.png"
+    },
+    {
+      "filename": "ezgif-frame-212.png",
+      "url": "https://02lrin0yndqag3mg.public.blob.vercel-storage.com/herosequences/ezgif-frame-212.png"
+    },
+    {
+      "filename": "ezgif-frame-213.png",
+      "url": "https://02lrin0yndqag3mg.public.blob.vercel-storage.com/herosequences/ezgif-frame-213.png"
+    },
+    {
+      "filename": "ezgif-frame-214.png",
+      "url": "https://02lrin0yndqag3mg.public.blob.vercel-storage.com/herosequences/ezgif-frame-214.png"
+    },
+    {
+      "filename": "ezgif-frame-215.png",
+      "url": "https://02lrin0yndqag3mg.public.blob.vercel-storage.com/herosequences/ezgif-frame-215.png"
+    },
+    {
+      "filename": "ezgif-frame-216.png",
+      "url": "https://02lrin0yndqag3mg.public.blob.vercel-storage.com/herosequences/ezgif-frame-216.png"
+    },
+    {
+      "filename": "ezgif-frame-217.png",
+      "url": "https://02lrin0yndqag3mg.public.blob.vercel-storage.com/herosequences/ezgif-frame-217.png"
+    },
+    {
+      "filename": "ezgif-frame-218.png",
+      "url": "https://02lrin0yndqag3mg.public.blob.vercel-storage.com/herosequences/ezgif-frame-218.png"
+    },
+    {
+      "filename": "ezgif-frame-219.png",
+      "url": "https://02lrin0yndqag3mg.public.blob.vercel-storage.com/herosequences/ezgif-frame-219.png"
+    },
+    {
+      "filename": "ezgif-frame-220.png",
+      "url": "https://02lrin0yndqag3mg.public.blob.vercel-storage.com/herosequences/ezgif-frame-220.png"
+    },
+    {
+      "filename": "ezgif-frame-221.png",
+      "url": "https://02lrin0yndqag3mg.public.blob.vercel-storage.com/herosequences/ezgif-frame-221.png"
+    },
+    {
+      "filename": "ezgif-frame-222.png",
+      "url": "https://02lrin0yndqag3mg.public.blob.vercel-storage.com/herosequences/ezgif-frame-222.png"
+    },
+    {
+      "filename": "ezgif-frame-223.png",
+      "url": "https://02lrin0yndqag3mg.public.blob.vercel-storage.com/herosequences/ezgif-frame-223.png"
+    },
+    {
+      "filename": "ezgif-frame-224.png",
+      "url": "https://02lrin0yndqag3mg.public.blob.vercel-storage.com/herosequences/ezgif-frame-224.png"
+    },
+    {
+      "filename": "ezgif-frame-225.png",
+      "url": "https://02lrin0yndqag3mg.public.blob.vercel-storage.com/herosequences/ezgif-frame-225.png"
+    },
+    {
+      "filename": "ezgif-frame-226.png",
+      "url": "https://02lrin0yndqag3mg.public.blob.vercel-storage.com/herosequences/ezgif-frame-226.png"
+    },
+    {
+      "filename": "ezgif-frame-227.png",
+      "url": "https://02lrin0yndqag3mg.public.blob.vercel-storage.com/herosequences/ezgif-frame-227.png"
+    },
+    {
+      "filename": "ezgif-frame-228.png",
+      "url": "https://02lrin0yndqag3mg.public.blob.vercel-storage.com/herosequences/ezgif-frame-228.png"
+    },
+    {
+      "filename": "ezgif-frame-229.png",
+      "url": "https://02lrin0yndqag3mg.public.blob.vercel-storage.com/herosequences/ezgif-frame-229.png"
+    },
+    {
+      "filename": "ezgif-frame-230.png",
+      "url": "https://02lrin0yndqag3mg.public.blob.vercel-storage.com/herosequences/ezgif-frame-230.png"
+    },
+    {
+      "filename": "ezgif-frame-231.png",
+      "url": "https://02lrin0yndqag3mg.public.blob.vercel-storage.com/herosequences/ezgif-frame-231.png"
+    },
+    {
+      "filename": "ezgif-frame-232.png",
+      "url": "https://02lrin0yndqag3mg.public.blob.vercel-storage.com/herosequences/ezgif-frame-232.png"
+    },
+    {
+      "filename": "ezgif-frame-233.png",
+      "url": "https://02lrin0yndqag3mg.public.blob.vercel-storage.com/herosequences/ezgif-frame-233.png"
+    },
+    {
+      "filename": "ezgif-frame-234.png",
+      "url": "https://02lrin0yndqag3mg.public.blob.vercel-storage.com/herosequences/ezgif-frame-234.png"
+    },
+    {
+      "filename": "ezgif-frame-235.png",
+      "url": "https://02lrin0yndqag3mg.public.blob.vercel-storage.com/herosequences/ezgif-frame-235.png"
+    },
+    {
+      "filename": "ezgif-frame-236.png",
+      "url": "https://02lrin0yndqag3mg.public.blob.vercel-storage.com/herosequences/ezgif-frame-236.png"
+    },
+    {
+      "filename": "ezgif-frame-237.png",
+      "url": "https://02lrin0yndqag3mg.public.blob.vercel-storage.com/herosequences/ezgif-frame-237.png"
+    },
+    {
+      "filename": "ezgif-frame-238.png",
+      "url": "https://02lrin0yndqag3mg.public.blob.vercel-storage.com/herosequences/ezgif-frame-238.png"
+    },
+    {
+      "filename": "ezgif-frame-239.png",
+      "url": "https://02lrin0yndqag3mg.public.blob.vercel-storage.com/herosequences/ezgif-frame-239.png"
+    },
+    {
+      "filename": "ezgif-frame-240.png",
+      "url": "https://02lrin0yndqag3mg.public.blob.vercel-storage.com/herosequences/ezgif-frame-240.png"
+    }
+  ]
+}
