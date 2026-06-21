@@ -84,7 +84,7 @@ export default function HeroSection() {
     const FRAMES_TO_LOAD = Math.ceil(TOTAL_FRAMES / FRAME_STEP);
 
     // Max time to wait before forcing boot (safety net for slow connections)
-    const MAX_WAIT_MS = isMobile ? 7000 : isTablet ? 10000 : 15000;
+    const MAX_WAIT_MS = isMobile ? 10000 : isTablet ? 12000 : 15000;
     let booted = false;
 
     const loadOne = (index: number): Promise<void> =>
