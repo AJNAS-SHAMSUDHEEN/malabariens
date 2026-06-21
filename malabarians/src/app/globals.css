@@ -166,3 +166,11 @@ input, textarea, select { font-family: inherit; font-size: inherit; }
   0%   { background-position: -200% center; }
   100% { background-position:  200% center; }
 }
+
+/* Lock scrolling during preloading */
+html.scrollLocked,
+body.scrollLocked {
+  overflow: hidden !important;
+  height: 100vh !important;
+  touch-action: none;
+}

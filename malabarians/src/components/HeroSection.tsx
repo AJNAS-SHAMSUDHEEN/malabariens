@@ -92,6 +92,15 @@ export default function HeroSection() {
        ─ Phase 2: Load ALL remaining frames in background (high concurrency)
        ─────────────────────────────────────────────────────────────── */
 
+    // Lock scrolling on html and body
+    document.documentElement.classList.add("scrollLocked");
+    document.body.classList.add("scrollLocked");
+
+    const unlockScroll = () => {
+      document.documentElement.classList.remove("scrollLocked");
+      document.body.classList.remove("scrollLocked");
+    };
+
     // How many frames to pre-load before booting the animation
     const BOOT_FRAMES = isMobile ? 10 : isTablet ? 20 : 30;
     // Desktop loads all frames, mobile/tablet skip for speed
@@ -100,6 +109,10 @@ export default function HeroSection() {
 
     let loadedCount = 0;
     let booted = false;
+    let loaderFinished = false;
+    const startTime = Date.now();
+    const MIN_LOAD_TIME = 8000; // 8 seconds
+    let rAFId: number;
 
     const loadOne = (index: number): Promise<void> =>
       new Promise((resolve) => {
@@ -108,14 +121,23 @@ export default function HeroSection() {
         img.crossOrigin = "anonymous";
         img.src = FRAME_PATH(index + 1);
         img.onload = () => {
-          framesRef.current[index] = img;
+          img.decode()
+            .then(() => {
+              framesRef.current[index] = img;
+              loadedCount++;
+              resolve();
+            })
+            .catch(() => {
+              // Fallback if decode fails (older browser or timeout)
+              framesRef.current[index] = img;
+              loadedCount++;
+              resolve();
+            });
+        };
+        img.onerror = () => {
           loadedCount++;
-          const pct = Math.min(99, Math.round((loadedCount / TOTAL_TO_LOAD) * 100));
-          if (progressBarRef.current) progressBarRef.current.style.width = `${pct}%`;
-          if (percentRef.current) percentRef.current.textContent = `${pct}%`;
           resolve();
         };
-        img.onerror = () => { loadedCount++; resolve(); };
       });
 
     /* Phase 1 — load first BOOT_FRAMES in parallel, then boot */
@@ -124,30 +146,53 @@ export default function HeroSection() {
       bootIndices.push(i);
     }
 
-    /* Phase 2 — load ALL remaining frames at high concurrency in background */
+    /* Phase 2 — fire ALL remaining frames simultaneously */
     const loadBackground = () => {
-      const CONCURRENCY = isMobile ? 6 : 20; // desktop: 20 parallel downloads!
       const allIndices: number[] = [];
       for (let i = 0; i < TOTAL_FRAMES; i += FRAME_STEP) {
         if (!framesRef.current[i]) allIndices.push(i);
       }
-      // Fire and forget — no await, runs in background
-      (async () => {
-        for (let i = 0; i < allIndices.length; i += CONCURRENCY) {
-          const batch: Promise<void>[] = [];
-          for (let j = i; j < Math.min(i + CONCURRENCY, allIndices.length); j++) {
-            batch.push(loadOne(allIndices[j]));
-          }
-          await Promise.all(batch);
-        }
-        // All done — snap progress to 100%
-        if (progressBarRef.current) progressBarRef.current.style.width = "100%";
-        if (percentRef.current) percentRef.current.textContent = "100%";
-      })();
+
+      const bgTotal = allIndices.length;
+      if (bgTotal === 0) return;
+
+      // Fire ALL downloads in parallel
+      allIndices.forEach(idx => {
+        loadOne(idx);
+      });
     };
 
-    // Safety timeout: boot after 5s even if boot frames aren't ready yet
-    const MAX_WAIT_MS = isMobile ? 10000 : isTablet ? 8000 : 5000;
+    // Progress Loop
+    const updateLoaderProgress = () => {
+      const timeElapsed = Date.now() - startTime;
+      const timePercent = (timeElapsed / MIN_LOAD_TIME) * 100;
+      const actualPercent = (loadedCount / TOTAL_TO_LOAD) * 100;
+
+      const smoothPercent = Math.min(timePercent, actualPercent);
+      const displayPercent = Math.min(100, Math.max(0, Math.round(smoothPercent)));
+
+      if (progressBarRef.current) {
+        progressBarRef.current.style.width = `${displayPercent}%`;
+      }
+      if (percentRef.current) {
+        percentRef.current.textContent = `${displayPercent}%`;
+      }
+
+      if (displayPercent >= 100) {
+        if (!loaderFinished) {
+          loaderFinished = true;
+          allDoneCallback();
+        }
+      } else {
+        rAFId = requestAnimationFrame(updateLoaderProgress);
+      }
+    };
+
+    // Start progress loop
+    rAFId = requestAnimationFrame(updateLoaderProgress);
+
+    // Safety timeout: boot after 12s even if boot frames aren't ready yet
+    const MAX_WAIT_MS = 12000;
     const safetyTimer = window.setTimeout(() => {
       if (!booted) {
         booted = true;
@@ -155,6 +200,8 @@ export default function HeroSection() {
         bootScrollAnimation();
         loadBackground();
       }
+      // Force loadedCount to total to trigger progress completion
+      loadedCount = TOTAL_TO_LOAD;
     }, MAX_WAIT_MS);
 
     // Boot as soon as first BOOT_FRAMES are loaded
@@ -164,27 +211,27 @@ export default function HeroSection() {
         clearTimeout(safetyTimer);
         drawFrame(0);
         bootScrollAnimation();
-        // Continue loading remaining frames in background
         loadBackground();
       }
     });
 
-
-
-    /* ── Step 2: Boot scroll animation after all frames loaded ── */
-    const bootScrollAnimation = () => {
+    // Called when every single frame is loaded and 8s elapsed
+    const allDoneCallback = () => {
+      unlockScroll();
       const loaderEl = loaderRef.current;
-      const introEl  = introRef.current;
-
-      // Hide loader bar
       if (loaderEl) {
         gsap.to(loaderEl, {
-          opacity: 0, duration: 0.4, ease: "power2.out",
+          opacity: 0, duration: 0.8, ease: "power2.out",
           onComplete: () => { loaderEl.style.display = "none"; },
         });
       }
+    };
 
-      // Fade out black intro overlay
+    /* ── Step 2: Boot scroll animation ── */
+    const bootScrollAnimation = () => {
+      const introEl = introRef.current;
+
+      // Just fade the intro overlay so canvas shows through
       if (introEl) {
         gsap.to(introEl, {
           opacity: 0, duration: 1.0, ease: "power2.inOut", delay: 0.1,
@@ -201,7 +248,7 @@ export default function HeroSection() {
         );
       }
 
-      // FRAME SEQUENCE — now all frames are in memory, no loading can stall this
+      // FRAME SEQUENCE
       const frameProxy = { frame: 0 };
       const frameTween = gsap.to(frameProxy, {
         frame: TOTAL_FRAMES - 1,
@@ -210,7 +257,7 @@ export default function HeroSection() {
           trigger: outer,
           start: "top top",
           end: "bottom bottom",
-          scrub: isMobile ? 1.0 : isTablet ? 1.2 : 1.8,
+          scrub: isMobile ? 1.0 : isTablet ? 1.5 : 3.0,
         },
         onUpdate() {
           let frameIndex = Math.round(frameProxy.frame);
@@ -239,7 +286,7 @@ export default function HeroSection() {
         }
       );
 
-      // NAVBAR + TEXT REVEAL (middle of animation: 35%→55%)
+      // NAVBAR + TEXT REVEAL
       const revealTl = gsap.timeline({
         scrollTrigger: {
           trigger: outer, start: "35% top", end: "55% top", scrub: 1.2,
@@ -292,14 +339,17 @@ export default function HeroSection() {
         rayTl.scrollTrigger?.kill(); rayTl.kill();
         ScrollTrigger.getAll().forEach((t) => t.kill());
         window.removeEventListener("resize", onResize);
+        cancelAnimationFrame(rAFId);
       };
     };
 
     /* ── Cleanup ── */
     return () => {
       clearTimeout(safetyTimer);
+      cancelAnimationFrame(rAFId);
       const cleanup = (outer as any).__heroCleanup;
       if (cleanup) cleanup();
+      unlockScroll();
     };
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
@@ -343,6 +393,8 @@ export default function HeroSection() {
               <div className={s.loaderOrbit}>
                 <div className={s.loaderOrbitDot} />
               </div>
+              {/* Inner counter-rotating orbit */}
+              <div className={s.loaderOrbitInner} />
               {/* Middle ring */}
               <div className={s.loaderRingMid} />
               {/* Icon circle */}
