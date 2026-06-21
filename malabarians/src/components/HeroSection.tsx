@@ -309,18 +309,34 @@ export default function HeroSection() {
             </div>
           </div>
 
-          {/* ── Skeleton Hero Content ── */}
+          {/* ── Animated Logo Center ── */}
           <div className={s.skelHero}>
-            {/* Badge pill */}
-            <div className={s.skelPill} style={{ width: 160, height: 28, marginBottom: 24 }} />
-            {/* Headline */}
-            <div className={s.skelBlock} style={{ width: '70%', height: 52, marginBottom: 14 }} />
-            <div className={s.skelBlock} style={{ width: '50%', height: 52, marginBottom: 28 }} />
-            {/* Subtext lines */}
-            <div className={s.skelBlock} style={{ width: '55%', height: 13, marginBottom: 10 }} />
-            <div className={s.skelBlock} style={{ width: '45%', height: 13, marginBottom: 32 }} />
-            {/* CTA Button */}
-            <div className={s.skelPill} style={{ width: 180, height: 48 }} />
+
+            {/* Orbit ring + pulsing logo */}
+            <div className={s.loaderLogoWrap}>
+              {/* Outer orbit */}
+              <div className={s.loaderOrbit}>
+                <div className={s.loaderOrbitDot} />
+              </div>
+              {/* Middle ring */}
+              <div className={s.loaderRingMid} />
+              {/* Icon circle */}
+              <div className={s.loaderIconCircle}>
+                <svg width="36" height="36" viewBox="0 0 24 24" fill="currentColor" className={s.loaderPalmIcon}>
+                  <path d="M12 2C10 2 8.5 3.5 8 5c-.8-1-2.2-1.5-3.5-1C3 4.5 2.5 6 3 7.5c-1.2.2-2 1.2-2 2.5 0 1.5 1.2 2.5 2.5 2.5H11v8a1 1 0 002 0v-8h7.5C21.8 12.5 23 11.5 23 10c0-1.3-.8-2.3-2-2.5.5-1.5 0-3-1.5-3.5C18.2 3.5 16.8 4 16 5c-.5-1.5-2-3-4-3z"/>
+                </svg>
+              </div>
+            </div>
+
+            {/* Brand wordmark */}
+            <p className={s.loaderWordmark}>Malabarians</p>
+            <p className={s.loaderSlogan}>— Goodness in Every Choice —</p>
+
+            {/* Animated loading dots */}
+            <div className={s.loaderDots}>
+              <span /><span /><span />
+            </div>
+
           </div>
 
           {/* ── Progress bar at bottom ── */}
