@@ -35,13 +35,23 @@ export default function HeroSection() {
   const framesRef       = useRef<(HTMLImageElement | null)[]>(new Array(TOTAL_FRAMES).fill(null));
   const currentFrameRef = useRef<number>(0);
 
-  /* ── Draw frame — COVER fit, no letterboxing ── */
+  /* ── Draw frame — COVER fit, falls back to nearest loaded frame ── */
   const drawFrame = (frameIndex: number) => {
     const canvas = canvasRef.current;
     if (!canvas) return;
     const ctx = canvas.getContext("2d", { alpha: false });
     if (!ctx) return;
-    const img = framesRef.current[frameIndex];
+
+    // Find nearest loaded frame (search ±20 frames) — never goes blank
+    let img = framesRef.current[frameIndex];
+    if (!img) {
+      for (let offset = 1; offset <= 20; offset++) {
+        img = framesRef.current[Math.max(0, frameIndex - offset)]
+           ?? framesRef.current[Math.min(TOTAL_FRAMES - 1, frameIndex + offset)]
+           ?? null;
+        if (img) break;
+      }
+    }
     if (!img) return;
 
     const { naturalWidth: iw, naturalHeight: ih } = img;
@@ -76,75 +86,90 @@ export default function HeroSection() {
     const isMobile = window.innerWidth < 768;
     const isTablet = window.innerWidth >= 768 && window.innerWidth < 1024;
 
-    /* ── Step 1: Load ALL frames sequentially, update progress bar ── */
+    /* ─────────────────────────────────────────────────────────────────
+       PROGRESSIVE LOADING STRATEGY
+       ─ Phase 1: Load first BOOT_FRAMES frames quickly → boot animation
+       ─ Phase 2: Load ALL remaining frames in background (high concurrency)
+       ─────────────────────────────────────────────────────────────── */
+
+    // How many frames to pre-load before booting the animation
+    const BOOT_FRAMES = isMobile ? 10 : isTablet ? 20 : 30;
+    // Desktop loads all frames, mobile/tablet skip for speed
+    const FRAME_STEP  = isMobile ? 3 : isTablet ? 2 : 1;
+    const TOTAL_TO_LOAD = Math.ceil(TOTAL_FRAMES / FRAME_STEP);
+
     let loadedCount = 0;
-
-    // On mobile, skip frames to load only every Nth frame for speed
-    const FRAME_STEP = isMobile ? 3 : isTablet ? 2 : 1;
-    const FRAMES_TO_LOAD = Math.ceil(TOTAL_FRAMES / FRAME_STEP);
-
-    // Max time to wait before forcing boot (safety net for slow connections)
-    const MAX_WAIT_MS = isMobile ? 10000 : isTablet ? 12000 : 15000;
     let booted = false;
 
     const loadOne = (index: number): Promise<void> =>
       new Promise((resolve) => {
         if (framesRef.current[index]) { resolve(); return; }
         const img = new Image();
+        img.crossOrigin = "anonymous";
         img.src = FRAME_PATH(index + 1);
         img.onload = () => {
           framesRef.current[index] = img;
           loadedCount++;
-          const pct = loadedCount / FRAMES_TO_LOAD;
-          const pctInt = Math.min(99, Math.round(pct * 100));
-          if (progressBarRef.current) {
-            progressBarRef.current.style.width = `${pctInt}%`;
-          }
-          if (percentRef.current) {
-            percentRef.current.textContent = `${pctInt}%`;
-          }
+          const pct = Math.min(99, Math.round((loadedCount / TOTAL_TO_LOAD) * 100));
+          if (progressBarRef.current) progressBarRef.current.style.width = `${pct}%`;
+          if (percentRef.current) percentRef.current.textContent = `${pct}%`;
           resolve();
         };
         img.onerror = () => { loadedCount++; resolve(); };
       });
 
-    // Load frames in parallel batches, skipping by FRAME_STEP on mobile
-    const loadAllFrames = async () => {
-      const CONCURRENCY = isMobile ? 6 : 8;
-      const indices: number[] = [];
-      for (let i = 0; i < TOTAL_FRAMES; i += FRAME_STEP) indices.push(i);
+    /* Phase 1 — load first BOOT_FRAMES in parallel, then boot */
+    const bootIndices: number[] = [];
+    for (let i = 0; i < TOTAL_FRAMES && bootIndices.length < BOOT_FRAMES; i += FRAME_STEP) {
+      bootIndices.push(i);
+    }
 
-      for (let i = 0; i < indices.length; i += CONCURRENCY) {
-        const batch: Promise<void>[] = [];
-        for (let j = i; j < Math.min(i + CONCURRENCY, indices.length); j++) {
-          batch.push(loadOne(indices[j]));
-        }
-        await Promise.all(batch);
+    /* Phase 2 — load ALL remaining frames at high concurrency in background */
+    const loadBackground = () => {
+      const CONCURRENCY = isMobile ? 6 : 20; // desktop: 20 parallel downloads!
+      const allIndices: number[] = [];
+      for (let i = 0; i < TOTAL_FRAMES; i += FRAME_STEP) {
+        if (!framesRef.current[i]) allIndices.push(i);
       }
-    };
-
-    // Draw frame 0 as soon as it's ready, before all frames are loaded
-    loadOne(0).then(() => drawFrame(0));
-
-    // Safety timeout: boot animation after MAX_WAIT_MS even if not all frames loaded
-    const safetyTimer = window.setTimeout(() => {
-      if (!booted) {
+      // Fire and forget — no await, runs in background
+      (async () => {
+        for (let i = 0; i < allIndices.length; i += CONCURRENCY) {
+          const batch: Promise<void>[] = [];
+          for (let j = i; j < Math.min(i + CONCURRENCY, allIndices.length); j++) {
+            batch.push(loadOne(allIndices[j]));
+          }
+          await Promise.all(batch);
+        }
+        // All done — snap progress to 100%
         if (progressBarRef.current) progressBarRef.current.style.width = "100%";
         if (percentRef.current) percentRef.current.textContent = "100%";
+      })();
+    };
+
+    // Safety timeout: boot after 5s even if boot frames aren't ready yet
+    const MAX_WAIT_MS = isMobile ? 10000 : isTablet ? 8000 : 5000;
+    const safetyTimer = window.setTimeout(() => {
+      if (!booted) {
         booted = true;
+        drawFrame(0);
         bootScrollAnimation();
+        loadBackground();
       }
     }, MAX_WAIT_MS);
 
-    // Load all, then boot the scroll animation
-    loadAllFrames().then(() => {
+    // Boot as soon as first BOOT_FRAMES are loaded
+    Promise.all(bootIndices.map(loadOne)).then(() => {
       if (!booted) {
         booted = true;
         clearTimeout(safetyTimer);
         drawFrame(0);
         bootScrollAnimation();
+        // Continue loading remaining frames in background
+        loadBackground();
       }
     });
+
+
 
     /* ── Step 2: Boot scroll animation after all frames loaded ── */
     const bootScrollAnimation = () => {
