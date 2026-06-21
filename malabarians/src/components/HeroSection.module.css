@@ -36,71 +36,108 @@
   pointer-events: none;
 }
 
-/* ── Centered branded preloader ── */
+/* ── Full-page skeleton loader ── */
 .loaderWrap {
   position: absolute;
   inset: 0;
   z-index: 55;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 0;
-  background: #000;
+  background: #0a0a0a;
   pointer-events: none;
+  overflow: hidden;
 }
 
-/* Animated palm icon container */
-.loaderLogo {
-  width: 72px;
-  height: 72px;
-  border-radius: 50%;
-  background: rgba(245, 166, 35, 0.1);
-  border: 1.5px solid rgba(245, 166, 35, 0.25);
+/* Shimmer animation for skeleton elements */
+@keyframes skelShimmer {
+  0%   { background-position: -400px 0; }
+  100% { background-position: 400px 0; }
+}
+
+/* Shared skeleton base */
+.skelBlock,
+.skelCircle,
+.skelPill {
+  background: linear-gradient(
+    90deg,
+    rgba(255,255,255,0.04) 0%,
+    rgba(255,255,255,0.09) 40%,
+    rgba(245,166,35,0.07) 50%,
+    rgba(255,255,255,0.09) 60%,
+    rgba(255,255,255,0.04) 100%
+  );
+  background-size: 800px 100%;
+  animation: skelShimmer 1.8s ease-in-out infinite;
+  border-radius: 6px;
+  flex-shrink: 0;
+}
+.skelCircle  { border-radius: 50%; }
+.skelPill    { border-radius: 100px; }
+
+/* ── Skeleton Navbar ── */
+.skelNav {
   display: flex;
   align-items: center;
+  justify-content: space-between;
+  padding: 0 32px;
+  height: 64px;
+  border-bottom: 1px solid rgba(255,255,255,0.05);
+  gap: 24px;
+  flex-shrink: 0;
+}
+.skelNavLogo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-shrink: 0;
+}
+.skelNavLinks {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+  flex: 1;
   justify-content: center;
-  margin-bottom: 20px;
-  animation: loaderPulse 2s ease-in-out infinite;
+}
+.skelNavCta {
+  flex-shrink: 0;
 }
 
-@keyframes loaderPulse {
-  0%, 100% { box-shadow: 0 0 0 0 rgba(245, 166, 35, 0); transform: scale(1); }
-  50%       { box-shadow: 0 0 0 12px rgba(245, 166, 35, 0); transform: scale(1.05); }
+/* ── Skeleton Hero body ── */
+.skelHero {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 0 32px 80px;
 }
 
-.loaderPalmIcon {
-  color: var(--clr-gold-400);
-  filter: drop-shadow(0 0 8px rgba(245, 166, 35, 0.4));
+/* ── Progress area at bottom ── */
+.loaderProgressArea {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 0 0 28px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
 }
 
-.loaderBrand {
-  font-family: 'Playfair Display', Georgia, serif;
-  font-size: 22px;
-  font-weight: 800;
-  letter-spacing: 0.04em;
-  color: #fff;
-  margin: 0 0 5px;
-}
-
-.loaderTagline {
-  font-family: 'Inter', system-ui, sans-serif;
-  font-size: 10px;
-  font-weight: 500;
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
-  color: rgba(245, 166, 35, 0.6);
-  margin: 0 0 32px;
+.loaderProgressLabel {
+  display: flex;
+  align-items: center;
+  gap: 12px;
 }
 
 /* Progress track (outer container) */
 .loaderTrack {
-  width: 180px;
+  width: 220px;
   height: 2px;
-  background: rgba(255, 255, 255, 0.1);
+  background: rgba(255, 255, 255, 0.08);
   border-radius: 2px;
   overflow: hidden;
-  margin-bottom: 12px;
 }
 
 /* Progress fill */
@@ -113,13 +150,22 @@
   box-shadow: 0 0 8px rgba(255, 212, 96, 0.5);
 }
 
+/* Brand label in progress area */
+.loaderBrand {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  color: rgba(255,255,255,0.55);
+}
+
 /* Percentage counter */
 .loaderPercent {
   font-family: 'Inter', system-ui, sans-serif;
   font-size: 11px;
   font-weight: 600;
   letter-spacing: 0.1em;
-  color: rgba(255, 255, 255, 0.35);
+  color: rgba(245, 166, 35, 0.6);
 }
 
 /* ── Luxury banana-cream gradient background ── */
@@ -455,6 +501,10 @@
   .headline { font-size: clamp(34px, 6vw, 68px); }
 
   .p6, .p11, .p13, .p16, .p17, .p19, .p20 { display: none; }
+
+  /* Skeleton tablet tweaks */
+  .skelNav { padding: 0 20px; }
+  .skelNavLinks { gap: 16px; }
 }
 
 /* Mobile */
@@ -482,6 +532,12 @@
 
   /* Hide scroll indicator on mobile — too cluttered */
   .scrollIndicator { display: none; }
+
+  /* Skeleton mobile tweaks */
+  .skelNav { padding: 0 16px; height: 56px; }
+  .skelNavLinks { display: none; }          /* hide nav links on mobile */
+  .skelNavCta { display: none; }            /* hide CTA on mobile */
+  .skelHero { padding: 0 20px 80px; }
 }
 
 /* Very small screens */
@@ -489,3 +545,4 @@
   .headline { font-size: 30px; }
   .tagline { font-size: 10px; }
 }
+

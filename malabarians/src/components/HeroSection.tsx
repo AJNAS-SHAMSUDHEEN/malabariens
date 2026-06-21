@@ -78,6 +78,14 @@ export default function HeroSection() {
     /* ── Step 1: Load ALL frames sequentially, update progress bar ── */
     let loadedCount = 0;
 
+    // On mobile, skip frames to load only every Nth frame for speed
+    const FRAME_STEP = isMobile ? 3 : isTablet ? 2 : 1;
+    const FRAMES_TO_LOAD = Math.ceil(TOTAL_FRAMES / FRAME_STEP);
+
+    // Max time to wait before forcing boot (safety net for slow connections)
+    const MAX_WAIT_MS = isMobile ? 7000 : isTablet ? 10000 : 15000;
+    let booted = false;
+
     const loadOne = (index: number): Promise<void> =>
       new Promise((resolve) => {
         if (framesRef.current[index]) { resolve(); return; }
@@ -86,8 +94,8 @@ export default function HeroSection() {
         img.onload = () => {
           framesRef.current[index] = img;
           loadedCount++;
-          const pct = loadedCount / TOTAL_FRAMES;
-          const pctInt = Math.round(pct * 100);
+          const pct = loadedCount / FRAMES_TO_LOAD;
+          const pctInt = Math.min(99, Math.round(pct * 100));
           if (progressBarRef.current) {
             progressBarRef.current.style.width = `${pctInt}%`;
           }
@@ -99,13 +107,16 @@ export default function HeroSection() {
         img.onerror = () => { loadedCount++; resolve(); };
       });
 
-    // Load 8 at a time (parallel batches) for speed
+    // Load frames in parallel batches, skipping by FRAME_STEP on mobile
     const loadAllFrames = async () => {
-      const CONCURRENCY = 8;
-      for (let i = 0; i < TOTAL_FRAMES; i += CONCURRENCY) {
+      const CONCURRENCY = isMobile ? 6 : 8;
+      const indices: number[] = [];
+      for (let i = 0; i < TOTAL_FRAMES; i += FRAME_STEP) indices.push(i);
+
+      for (let i = 0; i < indices.length; i += CONCURRENCY) {
         const batch: Promise<void>[] = [];
-        for (let j = i; j < Math.min(i + CONCURRENCY, TOTAL_FRAMES); j++) {
-          batch.push(loadOne(j));
+        for (let j = i; j < Math.min(i + CONCURRENCY, indices.length); j++) {
+          batch.push(loadOne(indices[j]));
         }
         await Promise.all(batch);
       }
@@ -114,10 +125,24 @@ export default function HeroSection() {
     // Draw frame 0 as soon as it's ready, before all frames are loaded
     loadOne(0).then(() => drawFrame(0));
 
+    // Safety timeout: boot animation after MAX_WAIT_MS even if not all frames loaded
+    const safetyTimer = window.setTimeout(() => {
+      if (!booted) {
+        if (progressBarRef.current) progressBarRef.current.style.width = "100%";
+        if (percentRef.current) percentRef.current.textContent = "100%";
+        booted = true;
+        bootScrollAnimation();
+      }
+    }, MAX_WAIT_MS);
+
     // Load all, then boot the scroll animation
     loadAllFrames().then(() => {
-      drawFrame(0);
-      bootScrollAnimation();
+      if (!booted) {
+        booted = true;
+        clearTimeout(safetyTimer);
+        drawFrame(0);
+        bootScrollAnimation();
+      }
     });
 
     /* ── Step 2: Boot scroll animation after all frames loaded ── */
@@ -246,6 +271,7 @@ export default function HeroSection() {
 
     /* ── Cleanup ── */
     return () => {
+      clearTimeout(safetyTimer);
       const cleanup = (outer as any).__heroCleanup;
       if (cleanup) cleanup();
     };
@@ -262,22 +288,50 @@ export default function HeroSection() {
         {/* BLACK INTRO OVERLAY */}
         <div className={s.introOverlay} ref={introRef} aria-hidden="true" />
 
-        {/* BRANDED PRELOADER — centered, fades out once all frames are ready */}
+        {/* FULL-PAGE SKELETON LOADER — mimics actual webpage layout */}
         <div className={s.loaderWrap} ref={loaderRef} aria-hidden="true">
-          {/* Logo mark */}
-          <div className={s.loaderLogo}>
-            <svg width="38" height="38" viewBox="0 0 24 24" fill="currentColor" className={s.loaderPalmIcon}>
-              <path d="M12 2C10 2 8.5 3.5 8 5c-.8-1-2.2-1.5-3.5-1C3 4.5 2.5 6 3 7.5c-1.2.2-2 1.2-2 2.5 0 1.5 1.2 2.5 2.5 2.5H11v8a1 1 0 002 0v-8h7.5C21.8 12.5 23 11.5 23 10c0-1.3-.8-2.3-2-2.5.5-1.5 0-3-1.5-3.5C18.2 3.5 16.8 4 16 5c-.5-1.5-2-3-4-3z"/>
-            </svg>
-          </div>
-          <p className={s.loaderBrand}>Malabarians</p>
-          <p className={s.loaderTagline}>— Goodness in Every Choice —</p>
 
-          {/* Progress track */}
-          <div className={s.loaderTrack}>
-            <div className={s.loaderBar} ref={progressBarRef} />
+          {/* ── Skeleton Navbar ── */}
+          <div className={s.skelNav}>
+            <div className={s.skelNavLogo}>
+              <div className={s.skelCircle} style={{ width: 32, height: 32 }} />
+              <div className={s.skelBlock} style={{ width: 110, height: 14 }} />
+            </div>
+            <div className={s.skelNavLinks}>
+              <div className={s.skelBlock} style={{ width: 52, height: 10 }} />
+              <div className={s.skelBlock} style={{ width: 62, height: 10 }} />
+              <div className={s.skelBlock} style={{ width: 48, height: 10 }} />
+              <div className={s.skelBlock} style={{ width: 72, height: 10 }} />
+            </div>
+            <div className={s.skelNavCta}>
+              <div className={s.skelPill} style={{ width: 120, height: 34 }} />
+            </div>
           </div>
-          <span className={s.loaderPercent} ref={percentRef}>0%</span>
+
+          {/* ── Skeleton Hero Content ── */}
+          <div className={s.skelHero}>
+            {/* Badge pill */}
+            <div className={s.skelPill} style={{ width: 160, height: 28, marginBottom: 24 }} />
+            {/* Headline */}
+            <div className={s.skelBlock} style={{ width: '70%', height: 52, marginBottom: 14 }} />
+            <div className={s.skelBlock} style={{ width: '50%', height: 52, marginBottom: 28 }} />
+            {/* Subtext lines */}
+            <div className={s.skelBlock} style={{ width: '55%', height: 13, marginBottom: 10 }} />
+            <div className={s.skelBlock} style={{ width: '45%', height: 13, marginBottom: 32 }} />
+            {/* CTA Button */}
+            <div className={s.skelPill} style={{ width: 180, height: 48 }} />
+          </div>
+
+          {/* ── Progress bar at bottom ── */}
+          <div className={s.loaderProgressArea}>
+            <div className={s.loaderTrack}>
+              <div className={s.loaderBar} ref={progressBarRef} />
+            </div>
+            <div className={s.loaderProgressLabel}>
+              <span className={s.loaderBrand}>Malabarians</span>
+              <span className={s.loaderPercent} ref={percentRef}>0%</span>
+            </div>
+          </div>
         </div>
 
         {/* Black background */}
