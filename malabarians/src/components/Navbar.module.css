@@ -1,24 +1,46 @@
-/* ── Navbar ── */
+/* ═══════════════════════════════════════════════════════
+   NAVBAR — Transparent over Hero / Glass when scrolled
+   ═══════════════════════════════════════════════════════ */
+
+/* ── Base ── */
 .nav {
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
   z-index: 100;
-  background: rgba(255, 255, 255, 0.98);
-  border-bottom: 1px solid var(--clr-gray-200);
-  transition: box-shadow var(--dur-base) var(--ease-out),
-              padding var(--dur-base) var(--ease-out);
   padding: var(--sp-4) 0;
+  transition:
+    background 0.45s cubic-bezier(0.16, 1, 0.3, 1),
+    box-shadow 0.45s cubic-bezier(0.16, 1, 0.3, 1),
+    backdrop-filter 0.45s ease,
+    border-color 0.45s ease,
+    padding 0.3s ease;
+
+  /* Initially invisible — GSAP animates it in after intro */
+  opacity: 0;
+  background: transparent;
+  border-bottom: 1px solid transparent;
 }
+
+/* ── Hero phase — transparent ── */
+.nav.hero {
+  background: transparent;
+  border-bottom: 1px solid transparent;
+  box-shadow: none;
+}
+
+/* ── Scrolled phase — frosted glass (less transparent) ── */
 .nav.scrolled {
-  background: rgba(255, 255, 255, 0.99);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
-  box-shadow: 0 2px 20px rgba(0,0,0,0.08);
+  background: rgba(255, 255, 255, 0.82);
+  backdrop-filter: blur(18px) saturate(1.4);
+  -webkit-backdrop-filter: blur(18px) saturate(1.4);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.07);
+  box-shadow: 0 2px 20px rgba(0, 0, 0, 0.07);
   padding: var(--sp-3) 0;
 }
 
+/* ── Inner layout ── */
 .inner {
   display: flex;
   align-items: center;
@@ -26,51 +48,76 @@
   gap: var(--sp-4);
 }
 
-/* Logo */
+/* ─────────────────────────────────────
+   LOGO
+   ───────────────────────────────────── */
 .logo {
   display: flex;
   align-items: center;
   gap: var(--sp-2);
   flex-shrink: 0;
   text-decoration: none;
+  transition: opacity 0.2s;
 }
+.logo:hover { opacity: 0.85; }
+
 .logoIconWrap {
   width: 36px;
   height: 36px;
   border-radius: 50%;
-  background: var(--clr-green-800);
   display: flex;
   align-items: center;
   justify-content: center;
-  color: white;
   flex-shrink: 0;
+  transition: background 0.4s ease, color 0.4s ease, border-color 0.4s ease;
+
+  /* Scrolled default */
+  background: var(--clr-green-800);
+  color: white;
 }
+
+/* Hero variant — ghost ring */
+.logoIconHero {
+  background: rgba(255, 255, 255, 0.15);
+  border: 1.5px solid rgba(255, 255, 255, 0.4);
+  color: white;
+  backdrop-filter: blur(4px);
+}
+
 .logoText {
   display: flex;
   flex-direction: column;
 }
+
 .logoName {
   font-family: var(--ff-display);
   font-weight: 800;
   font-size: 18px;
-  color: var(--clr-green-800);
   letter-spacing: 0.01em;
   line-height: 1.1;
+  transition: color 0.4s ease;
+  color: var(--clr-green-800); /* scrolled default */
 }
-.palmInline {
-  color: var(--clr-green-500);
-  font-weight: 400;
-}
+
+.logoNameHero { color: rgba(255, 255, 255, 0.96); }
+
+.palmInline { color: var(--clr-green-500); font-weight: 400; }
+
 .logoTagline {
   font-size: 9px;
   font-weight: 600;
   letter-spacing: 0.12em;
-  color: var(--clr-gray-500);
   text-transform: uppercase;
   margin-top: 1px;
+  transition: color 0.4s ease;
+  color: var(--clr-gray-500); /* scrolled default */
 }
 
-/* Desktop Nav Links */
+.logoTaglineHero { color: rgba(255, 255, 255, 0.5); }
+
+/* ─────────────────────────────────────
+   DESKTOP NAV LINKS
+   ───────────────────────────────────── */
 .links {
   display: none;
   align-items: center;
@@ -84,14 +131,36 @@
 .link {
   font-size: var(--fs-sm);
   font-weight: 500;
-  color: var(--clr-gray-700);
   letter-spacing: 0.01em;
-  transition: color var(--dur-fast);
   white-space: nowrap;
+  position: relative;
+  transition: color 0.3s ease;
+  color: var(--clr-gray-700); /* scrolled default */
 }
-.link:hover { color: var(--clr-green-700); }
 
-/* Actions */
+/* Hero variant */
+.linkHero {
+  color: rgba(255, 255, 255, 0.88);
+}
+
+.link::after {
+  content: "";
+  position: absolute;
+  bottom: -3px;
+  left: 0;
+  right: 0;
+  height: 1.5px;
+  background: currentColor;
+  transform: scaleX(0);
+  transition: transform 0.25s cubic-bezier(0.34, 1.56, 0.64, 1);
+  transform-origin: left;
+}
+.link:hover::after { transform: scaleX(1); }
+.link:hover { color: inherit; opacity: 0.7; }
+
+/* ─────────────────────────────────────
+   ACTIONS
+   ───────────────────────────────────── */
 .actions {
   display: none;
   align-items: center;
@@ -100,25 +169,48 @@
 }
 @media (min-width: 900px) { .actions { display: flex; } }
 
+/* WhatsApp CTA button */
 .btnWa {
   display: inline-flex;
   align-items: center;
   gap: var(--sp-2);
-  background: var(--clr-green-800);
-  color: var(--clr-white);
   font-size: var(--fs-sm);
   font-weight: 700;
   padding: 10px 20px;
   border-radius: var(--r-full);
-  transition: background var(--dur-fast), transform var(--dur-fast);
+  transition:
+    background 0.3s ease,
+    color 0.3s ease,
+    transform 0.2s ease,
+    box-shadow 0.3s ease,
+    border-color 0.3s ease;
   white-space: nowrap;
+
+  /* Scrolled: filled green */
+  background: var(--clr-green-800);
+  color: var(--clr-white);
+  border: 1.5px solid transparent;
 }
 .btnWa:hover {
   background: var(--clr-green-700);
   transform: translateY(-1px);
 }
 
-/* Hamburger */
+/* Hero variant: ghost */
+.btnWaHero {
+  background: rgba(255, 255, 255, 0.14);
+  border-color: rgba(255, 255, 255, 0.38);
+  color: white;
+  backdrop-filter: blur(8px);
+}
+.btnWaHero:hover {
+  background: rgba(255, 255, 255, 0.25);
+  transform: translateY(-1px);
+}
+
+/* ─────────────────────────────────────
+   HAMBURGER
+   ───────────────────────────────────── */
 .hamburger {
   display: flex;
   align-items: center;
@@ -126,20 +218,26 @@
   width: 40px;
   height: 40px;
   border-radius: var(--r-md);
-  color: var(--clr-green-800);
-  transition: background var(--dur-fast);
+  transition: background 0.2s ease, color 0.4s ease;
+  color: var(--clr-green-800); /* scrolled */
 }
-.hamburger:hover { background: var(--clr-green-50); }
+.hamburgerHero { color: rgba(255, 255, 255, 0.9); }
+.hamburger:hover { background: rgba(0, 0, 0, 0.06); }
+.hamburgerHero:hover { background: rgba(255, 255, 255, 0.12); }
 @media (min-width: 900px) { .hamburger { display: none; } }
 
-/* Mobile drawer */
+/* ─────────────────────────────────────
+   MOBILE DRAWER
+   ───────────────────────────────────── */
 .drawer {
   overflow: hidden;
   max-height: 0;
-  transition: max-height var(--dur-slow) var(--ease-out),
-              opacity var(--dur-base);
+  transition:
+    max-height var(--dur-slow) var(--ease-out),
+    opacity var(--dur-base);
   opacity: 0;
-  background: var(--clr-white);
+  background: rgba(255, 255, 255, 0.98);
+  backdrop-filter: blur(20px);
   border-top: 1px solid var(--clr-gray-100);
   box-shadow: var(--shadow-md);
 }

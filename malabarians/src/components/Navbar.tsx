@@ -1,5 +1,6 @@
 "use client";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
+import gsap from "gsap";
 import s from "./Navbar.module.css";
 import { buildSimpleWhatsAppURL } from "@/lib/whatsapp";
 
@@ -23,28 +24,51 @@ const WaIcon = () => (
 );
 
 export default function Navbar() {
-  const [scrolled, setScrolled] = useState(false);
-  const [open, setOpen] = useState(false);
+  const [phase, setPhase] = useState<"hero" | "scrolled">("hero");
+  const [open, setOpen]   = useState(false);
+  const heroRef = useRef<Element | null>(null);
+  const navRef  = useRef<HTMLElement | null>(null);
+
+
 
   useEffect(() => {
-    const fn = () => setScrolled(window.scrollY > 40);
-    window.addEventListener("scroll", fn, { passive: true });
-    return () => window.removeEventListener("scroll", fn);
+    heroRef.current = document.getElementById("hero");
+
+    const updatePhase = () => {
+      const scrollY = window.scrollY;
+      if (heroRef.current) {
+        const heroEl = heroRef.current as HTMLElement;
+        const heroOuterHeight = heroEl.offsetHeight;
+        const vh = window.innerHeight;
+        const heroScrollEnd = heroEl.offsetTop + heroOuterHeight - vh;
+        setPhase(scrollY < heroScrollEnd ? "hero" : "scrolled");
+      } else {
+        setPhase(scrollY > window.innerHeight * 0.8 ? "scrolled" : "hero");
+      }
+    };
+
+    window.addEventListener("scroll", updatePhase, { passive: true });
+    updatePhase();
+    return () => window.removeEventListener("scroll", updatePhase);
   }, []);
 
+  const isHero = phase === "hero";
+
   return (
-    <nav className={`${s.nav} ${scrolled ? s.scrolled : ""}`}>
+    <nav ref={(el) => { navRef.current = el; }} className={`${s.nav} ${isHero ? s.hero : s.scrolled}`}>
       <div className={`${s.inner} container`}>
         {/* Logo */}
         <a href="#" className={s.logo} aria-label="Malabarians Home">
-          <div className={s.logoIconWrap}>
+          <div className={`${s.logoIconWrap} ${isHero ? s.logoIconHero : ""}`}>
             <PalmIcon />
           </div>
           <div className={s.logoText}>
-            <span className={s.logoName}>
+            <span className={`${s.logoName} ${isHero ? s.logoNameHero : ""}`}>
               Ma<span className={s.palmInline}>|</span>abarians
             </span>
-            <span className={s.logoTagline}>— Goodness in Every Choice —</span>
+            <span className={`${s.logoTagline} ${isHero ? s.logoTaglineHero : ""}`}>
+              — Goodness in Every Choice —
+            </span>
           </div>
         </a>
 
@@ -52,14 +76,21 @@ export default function Navbar() {
         <ul className={s.links} role="list">
           {NAV_LINKS.map(l => (
             <li key={l.href}>
-              <a href={l.href} className={s.link}>{l.label}</a>
+              <a href={l.href} className={`${s.link} ${isHero ? s.linkHero : ""}`}>
+                {l.label}
+              </a>
             </li>
           ))}
         </ul>
 
         {/* WhatsApp CTA */}
         <div className={s.actions}>
-          <a href={buildSimpleWhatsAppURL()} target="_blank" rel="noopener noreferrer" className={s.btnWa}>
+          <a
+            href={buildSimpleWhatsAppURL()}
+            target="_blank"
+            rel="noopener noreferrer"
+            className={`${s.btnWa} ${isHero ? s.btnWaHero : ""}`}
+          >
             <WaIcon /> WhatsApp Us
           </a>
         </div>
@@ -67,7 +98,7 @@ export default function Navbar() {
         {/* Hamburger */}
         <button
           id="nav-menu-btn"
-          className={s.hamburger}
+          className={`${s.hamburger} ${isHero ? s.hamburgerHero : ""}`}
           onClick={() => setOpen(!open)}
           aria-label={open ? "Close menu" : "Open menu"}
           aria-expanded={open}
@@ -93,7 +124,13 @@ export default function Navbar() {
             </a>
           ))}
           <div className={s.drawerActions}>
-            <a href={buildSimpleWhatsAppURL()} target="_blank" rel="noopener noreferrer" className={s.btnWa} onClick={() => setOpen(false)}>
+            <a
+              href={buildSimpleWhatsAppURL()}
+              target="_blank"
+              rel="noopener noreferrer"
+              className={s.btnWa}
+              onClick={() => setOpen(false)}
+            >
               <WaIcon /> WhatsApp Us
             </a>
           </div>

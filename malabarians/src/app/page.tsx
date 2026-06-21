@@ -11,12 +11,9 @@ export default function Home() {
   return (
     <>
       <Navbar />
-      <main
-        /* 64px bottom padding on mobile for the sticky order bar */
-        style={{ paddingBottom: "64px" }}
-      >
+      <main>
         <HeroSection />
-        {/* id="product" anchor for "Discover Our Product" hero CTA */}
+        {/* id="product" anchor for hero CTA */}
         <div id="product">
           <AboutSection />
         </div>
